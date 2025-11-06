@@ -38,6 +38,7 @@ export default function RadialBackground() {
     }
 
     function drawArm(baseAngle: number, t: number) {
+      if (!ctx) return
       const steps = 90
       const inner = R * INNER_HOLE
       const amp = R * AMP
@@ -59,6 +60,7 @@ export default function RadialBackground() {
 
     let start = performance.now()
     function frame(now: number) {
+      if (!ctx) return
       const t = (now - start) / 1000
       ctx.clearRect(0, 0, w, h)
 
