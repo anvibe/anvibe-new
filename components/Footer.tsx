@@ -5,12 +5,12 @@ import RadialBackgroundInverted from './RadialBackgroundInverted'
 
 export default function Footer() {
   return (
-    <footer className="relative py-12 sm:py-16 md:py-24" style={{ background: '#0a0a09' }}>
+    <footer className="relative py-12 sm:py-16 md:py-24 overflow-hidden" style={{ background: '#0a0a09' }}>
       {/* Inverted Radial Background Canvas */}
       <RadialBackgroundInverted />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8">
+      <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 min-h-0">
         {/* Brand Logo */}
         <div className="max-w-full sm:max-w-[504px] mb-8 sm:mb-12 md:mb-16">
           <div className="h-auto sm:h-[120px] md:h-[173px] flex items-center">
@@ -25,14 +25,14 @@ export default function Footer() {
           {/* Left Navigation */}
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-12 items-start sm:items-end opacity-80 w-full sm:w-auto">
             {/* Navigation Links - Horizontal on mobile */}
-            <div className="flex flex-row sm:flex-col gap-3 sm:gap-1 flex-wrap">
-              <a href="#projects" className="flex items-center gap-1 text-white hover:text-white/80 transition-colors text-sm sm:text-base whitespace-nowrap">
+            <div className="flex flex-row sm:flex-col gap-2 sm:gap-1 flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-x-visible">
+              <a href="#projects" className="flex items-center gap-1 text-white hover:text-white/80 transition-colors text-sm sm:text-base whitespace-nowrap shrink-0">
                 <span>Works</span>
                 <span className="text-xs">(8)</span>
               </a>
-              <a href="/about" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap">About</a>
-              <a href="#blog" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap">Blog</a>
-              <a href="#contact" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap">Contact</a>
+              <a href="/about" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">About</a>
+              <a href="#blog" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">Blog</a>
+              <a href="#contact" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">Contact</a>
             </div>
 
             {/* Social Links - Horizontal */}
