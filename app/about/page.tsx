@@ -97,7 +97,8 @@ export default function AboutPage() {
                             { href: '/', label: 'Home' },
                             { href: '/#projects', label: 'Works (8)' },
                             { href: '/about', label: 'About' },
-                            { href: '/#blog', label: 'Blog' },
+                            { href: '/vibecoding', label: 'Vibecoding' },
+                            { href: '/blog', label: 'Blog' },
                             { href: '/#contact', label: 'Contact' },
                           ].map((item, index) => (
                             <motion.div

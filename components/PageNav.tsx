@@ -92,6 +92,7 @@ export default function PageNav() {
                         { href: '/', label: 'Home' },
                         { href: '/#projects', label: 'Works (8)' },
                         { href: '/about', label: 'About' },
+                        { href: '/vibecoding', label: 'Vibecoding' },
                         { href: '/blog', label: 'Blog' },
                         { href: '/#contact', label: 'Contact' },
                       ].map((item, index) => (

@@ -9,7 +9,19 @@ import TextScramble from './TextScramble'
 
 export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -127,6 +139,7 @@ export default function Hero() {
                             { href: '/', label: 'Home' },
                             { href: '/#projects', label: 'Works (8)' },
                             { href: '/about', label: 'About' },
+                            { href: '/vibecoding', label: 'Vibecoding' },
                             { href: '/blog', label: 'Blog' },
                             { href: '/#contact', label: 'Contact' },
                           ].map((item, index) => (
@@ -189,7 +202,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-start sm:items-end justify-between relative gap-4 sm:gap-0"
           >
             {/* Tagline Text */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight max-w-full sm:max-w-[70%]" style={{ paddingTop: '0', lineHeight: '0.8' }}>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight max-w-full sm:max-w-[70%]" style={{ paddingTop: '0', lineHeight: isMobile ? '1.4' : '0.8' }}>
               <TextScramble 
                 texts={[
                   "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",

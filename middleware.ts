@@ -7,7 +7,8 @@ export function middleware(request: NextRequest) {
   // Set Content Security Policy headers
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://ogs.google.com https://www.google.com https://www.gstatic.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://ogs.google.com https://www.google.com https://www.gstatic.com https://*.google.com;
+    script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' blob: https://ogs.google.com https://www.google.com https://www.gstatic.com https://*.google.com;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' blob: data: https:;
