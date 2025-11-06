@@ -6,6 +6,7 @@ import { ExternalLink } from 'lucide-react'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import ProjectNav from '@/components/ProjectNav'
+import TextScramble from '@/components/TextScramble'
 
 export async function generateStaticParams() {
   const slugs = getAllProjectSlugs()
