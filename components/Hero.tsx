@@ -40,12 +40,21 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative h-screen overflow-hidden">
+      <section 
+        className="relative overflow-hidden" 
+        style={{ 
+          height: '100dvh', // Use dynamic viewport height for mobile
+          minHeight: '100dvh',
+          position: 'relative',
+          zIndex: 100,
+          background: '#040403'
+        }}
+      >
         {/* Radial Background Canvas */}
         <RadialBackground />
 
         {/* Content Overlay */}
-        <div className="relative z-10 flex flex-col justify-between h-screen p-4 sm:p-6 md:p-8">
+        <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8" style={{ height: '100%', minHeight: '100dvh' }}>
           {/* Top Section */}
           <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
             {/* Logo and Menu Row */}

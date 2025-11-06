@@ -24,7 +24,7 @@ export default async function Projects() {
   }
 
   return (
-    <section id="projects" className="py-0 px-0" style={{ background: '#040403' }}>
+    <section id="projects" className="py-0 px-0" style={{ background: '#040403', position: 'relative', zIndex: 1, visibility: 'visible' }}>
       <div className="w-full">
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">

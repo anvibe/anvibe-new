@@ -10,22 +10,25 @@ import FAQ from '@/components/FAQ'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import ClientWrapper from '@/components/ClientWrapper'
 
 export default async function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <PartnerLogos />
-      <Projects />
-      <Solutions />
-      <StorySection />
-      <Testimonials />
-      {/* <Stats /> */}
-      <Pricing />
-      <FAQ />
-      <Blog />
-      <Contact />
-      <Footer />
+      <ClientWrapper>
+        <PartnerLogos />
+        <Projects />
+        <Solutions />
+        <StorySection />
+        <Testimonials />
+        {/* <Stats /> */}
+        <Pricing />
+        <FAQ />
+        <Blog />
+        <Contact />
+        <Footer />
+      </ClientWrapper>
     </main>
   )
 }

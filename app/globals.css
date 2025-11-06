@@ -38,6 +38,17 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Prevent flash of content before Hero loads */
+main > section:first-child {
+  position: relative;
+  z-index: 100;
+}
+
+main > section:not(:first-child) {
+  position: relative;
+  z-index: 1;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
