@@ -47,7 +47,9 @@ export default function Hero() {
           minHeight: '100dvh',
           position: 'relative',
           zIndex: 100,
-          background: '#040403'
+          background: '#040403',
+          width: '100%',
+          display: 'block'
         }}
       >
         {/* Radial Background Canvas */}
