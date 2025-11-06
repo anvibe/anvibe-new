@@ -650,10 +650,10 @@ export default function VibecodingPage() {
                   linkText: 'Visit Blog'
                 },
                 {
-                  title: 'Join the Community',
-                  description: 'Connect with other vibe coders, share your projects, and learn from the community. The future of coding is collaborative.',
-                  link: '/#contact',
-                  linkText: 'Get in Touch'
+                  title: 'Start Your Project',
+                  description: 'Ready to bring your ideas to life? Let\'s collaborate and create something extraordinary together. Transform your vision into reality with vibecoding.',
+                  link: '#contact',
+                  linkText: 'Start Now'
                 }
               ].map((resource, index) => {
                 const resourceColors = ['#3060eb', '#8f35ea']
@@ -673,6 +673,17 @@ export default function VibecodingPage() {
                       </p>
                       <Link
                         href={resource.link}
+                        onClick={(e) => {
+                          if (resource.link === '#contact') {
+                            e.preventDefault()
+                            setTimeout(() => {
+                              const contactSection = document.getElementById('contact')
+                              if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' })
+                              }
+                            }, 100)
+                          }
+                        }}
                         className="text-sm sm:text-base font-medium underline self-start transition-colors hover:opacity-80"
                         style={{ color: color }}
                       >
