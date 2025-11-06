@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface Gradient {
   color1: string
@@ -14,18 +15,10 @@ interface RadialBackgroundProps {
 
 export default function RadialBackground({ gradient }: RadialBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const bgRef = useRef<HTMLDivElement>(null)
   const animationFrameRef = useRef<number>()
 
   const defaultGradient = { color1: '#3060eb', color2: '#8f35ea', angle: 301 }
   const currentGradient = gradient || defaultGradient
-
-  // Update background gradient smoothly when it changes
-  useEffect(() => {
-    if (bgRef.current) {
-      bgRef.current.style.background = `linear-gradient(${currentGradient.angle}deg, ${currentGradient.color1}, ${currentGradient.color2})`
-    }
-  }, [currentGradient])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -137,17 +130,22 @@ export default function RadialBackground({ gradient }: RadialBackgroundProps) {
 
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>
-      {/* Background gradient layer */}
-      <div
-        ref={bgRef}
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background: `linear-gradient(${currentGradient.angle}deg, ${currentGradient.color1}, ${currentGradient.color2})`,
-          backgroundSize: '400% 400%',
-          animation: 'gradientMove 11s ease-in-out infinite',
-          transition: 'background 1.5s ease-in-out',
-        }}
-      />
+      {/* Background gradient layer with smooth fade transitions */}
+      <AnimatePresence>
+        <motion.div
+          key={`${currentGradient.color1}-${currentGradient.color2}-${currentGradient.angle}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 3, ease: [0.4, 0, 0.2, 1] }}
+          className="absolute inset-0 w-full h-full"
+          style={{
+            background: `linear-gradient(${currentGradient.angle}deg, ${currentGradient.color1}, ${currentGradient.color2})`,
+            backgroundSize: '400% 400%',
+            animation: 'gradientMove 11s ease-in-out infinite',
+          }}
+        />
+      </AnimatePresence>
       {/* Canvas animation layer */}
       <canvas
         ref={canvasRef}
