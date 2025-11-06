@@ -37,20 +37,15 @@ export default function Footer() {
 
             {/* Social Links - Horizontal */}
             <div className="flex flex-row sm:flex-row gap-3 sm:gap-2 items-center">
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">IG</a>
+              <a href="https://www.instagram.com/anvibe.xyz/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">IG</a>
               <span className="text-white text-xs sm:text-sm">/</span>
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">BE</a>
+              <a href="https://www.youtube.com/@Anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">YT</a>
               <span className="text-white text-xs sm:text-sm">/</span>
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">DR</a>
-              <span className="text-white text-xs sm:text-sm">/</span>
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">X</a>
+              <a href="https://x.com/anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors whitespace-nowrap">X</a>
             </div>
 
-            {/* Copyright and Powered By */}
+            {/* Copyright */}
             <div className="flex flex-col gap-1">
-              <div className="text-sm sm:text-base text-white">
-                Powered by <a href="#" className="hover:text-white/80 transition-colors">Webflow</a>
-              </div>
               <p className="text-sm sm:text-base text-white">© 2026 Anvibe®</p>
             </div>
           </div>

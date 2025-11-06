@@ -173,13 +173,11 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
               className="flex items-center gap-3 sm:gap-5"
             >
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">IG</a>
+              <a href="https://www.instagram.com/anvibe.xyz/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">IG</a>
               <span className="text-white">/</span>
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">BE</a>
+              <a href="https://www.youtube.com/@Anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">YT</a>
               <span className="text-white">/</span>
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">DR</a>
-              <span className="text-white">/</span>
-              <a href="#" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">X</a>
+              <a href="https://x.com/anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">X</a>
             </motion.div>
           </div>
 
