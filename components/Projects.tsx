@@ -41,7 +41,7 @@ export default async function Projects() {
                   <h3 className="text-2xl font-semibold" style={{ color: '#EEF4ED' }}>{project.title}</h3>
                 </div>
               </div>
-              <div className="w-full h-full flex items-center justify-center relative" style={{ background: '#0a0a09', color: '#EEF4ED', opacity: 0.5 }}>
+              <div className="w-full h-full flex items-center justify-center relative" style={{ background: '#0a0a09', color: '#EEF4ED' }}>
                 {project.heroImage ? (
                   <Image 
                     src={project.heroImage} 
@@ -52,7 +52,7 @@ export default async function Projects() {
                     priority={index === 0}
                   />
                 ) : (
-                  <span>Project Image</span>
+                  <span style={{ opacity: 0.5 }}>Project Image</span>
                 )}
               </div>
             </Link>
