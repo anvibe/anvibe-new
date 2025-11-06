@@ -1,13 +1,47 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
 import RadialBackgroundInverted from './RadialBackgroundInverted'
 
 export default function Footer() {
+  const [currentGradient, setCurrentGradient] = useState(0)
+
+  const gradients = [
+    { color1: '#3060eb', color2: '#8f35ea', angle: 301 }, // Branding gradient (start)
+    { color1: '#4BD760', color2: '#3060eb', angle: 135 }, // Green to Blue
+    { color1: '#E28F2F', color2: '#FD5C5C', angle: 225 }, // Orange to Red
+    { color1: '#E1A0FF', color2: '#8f35ea', angle: 45 }, // Pink to Purple
+    { color1: '#3060eb', color2: '#4BD760', angle: 315 }, // Blue to Green
+  ]
+
+  useEffect(() => {
+    // Start carousel after initial load (wait 3 seconds)
+    let interval: NodeJS.Timeout | null = null
+    
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        setCurrentGradient((prev) => (prev + 1) % gradients.length)
+      }, 6000) // Change gradient every 6 seconds
+    }, 3000)
+
+    return () => {
+      clearTimeout(timeout)
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [gradients.length])
+
   return (
-    <footer className="relative py-12 sm:py-16 md:py-24 overflow-hidden" style={{ background: '#0a0a09' }}>
+    <footer className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
       {/* Inverted Radial Background Canvas */}
-      <RadialBackgroundInverted />
+      <RadialBackgroundInverted gradient={gradients[currentGradient]} />
+
+      {/* Additional gradient overlay */}
+      <div className="absolute inset-0 opacity-30 z-[2]" style={{
+        background: 'radial-gradient(ellipse at center, rgba(48, 96, 235, 0.1) 0%, transparent 70%)',
+      }} />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 min-h-0">

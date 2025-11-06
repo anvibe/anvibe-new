@@ -2,9 +2,30 @@
 
 import { useEffect, useRef } from 'react'
 
-export default function RadialBackground() {
+interface Gradient {
+  color1: string
+  color2: string
+  angle: number
+}
+
+interface RadialBackgroundProps {
+  gradient?: Gradient
+}
+
+export default function RadialBackground({ gradient }: RadialBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
   const animationFrameRef = useRef<number>()
+
+  const defaultGradient = { color1: '#3060eb', color2: '#8f35ea', angle: 301 }
+  const currentGradient = gradient || defaultGradient
+
+  // Update background gradient smoothly when it changes
+  useEffect(() => {
+    if (bgRef.current) {
+      bgRef.current.style.background = `linear-gradient(${currentGradient.angle}deg, ${currentGradient.color1}, ${currentGradient.color2})`
+    }
+  }, [currentGradient])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -115,17 +136,27 @@ export default function RadialBackground() {
   }, [])
 
   return (
-    <canvas
-      ref={canvasRef}
-      id="radial-bg"
-      className="absolute inset-0 w-full h-full block pointer-events-none"
-      style={{
-        background: 'linear-gradient(301deg, #3060eb, #8f35ea)',
-        backgroundSize: '400% 400%',
-        animation: 'gradientMove 11s ease-in-out infinite',
-        transform: 'translateZ(0)',
-        zIndex: -1,
-      }}
-    />
+    <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>
+      {/* Background gradient layer */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 w-full h-full"
+        style={{
+          background: `linear-gradient(${currentGradient.angle}deg, ${currentGradient.color1}, ${currentGradient.color2})`,
+          backgroundSize: '400% 400%',
+          animation: 'gradientMove 11s ease-in-out infinite',
+          transition: 'background 1.5s ease-in-out',
+        }}
+      />
+      {/* Canvas animation layer */}
+      <canvas
+        ref={canvasRef}
+        id="radial-bg"
+        className="absolute inset-0 w-full h-full block pointer-events-none"
+        style={{
+          transform: 'translateZ(0)',
+        }}
+      />
+    </div>
   )
 }

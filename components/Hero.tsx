@@ -10,7 +10,23 @@ import TextScramble from './TextScramble'
 export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [currentGradient, setCurrentGradient] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const menuRef = useRef<HTMLDivElement>(null)
+
+  const gradients = [
+    { color1: '#3060eb', color2: '#8f35ea', angle: 301 },
+    { color1: '#8f35ea', color2: '#E1A0FF', angle: 135 },
+    { color1: '#E1A0FF', color2: '#4BD760', angle: 45 },
+    { color1: '#4BD760', color2: '#3060eb', angle: 225 },
+  ]
+
+  const carouselItems = [
+    { text: 'AI-Powered Development', color: '#3060eb' },
+    { text: 'Creative Technology', color: '#8f35ea' },
+    { text: 'Interactive Experiences', color: '#E1A0FF' },
+    { text: 'LLM-Driven Solutions', color: '#4BD760' },
+  ]
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -51,6 +67,32 @@ export default function Hero() {
     }
   }, [isMenuOpen])
 
+  useEffect(() => {
+    // Start carousel after initial animation (wait 5 seconds)
+    let interval: NodeJS.Timeout | null = null
+    
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        setCurrentGradient((prev) => (prev + 1) % gradients.length)
+      }, 5000) // Change gradient every 5 seconds
+    }, 5000)
+
+    return () => {
+      clearTimeout(timeout)
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [gradients.length])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselItems.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [carouselItems.length])
+
   return (
     <>
       <section 
@@ -66,7 +108,7 @@ export default function Hero() {
         }}
       >
         {/* Radial Background Canvas */}
-        <RadialBackground />
+        <RadialBackground gradient={gradients[currentGradient]} />
 
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8" style={{ height: '100%', minHeight: '100dvh' }}>
@@ -201,20 +243,48 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             className="flex flex-col sm:flex-row items-start sm:items-end justify-between relative gap-4 sm:gap-0"
           >
-            {/* Tagline Text */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight max-w-full sm:max-w-[70%]" style={{ paddingTop: '0', lineHeight: isMobile ? '1.4' : '0.8' }}>
-              <TextScramble 
-                texts={[
-                  "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
-                  "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
-                ]}
-                speed={10}
-                delay={1000}
-                holdDuration={4000}
-                lineGap="0"
-                className="inline"
-              />
-            </p>
+            {/* Tagline Text Container */}
+            <div className="flex flex-col gap-4 sm:gap-6 w-full sm:max-w-[70%]">
+              {/* Text Carousel - Above Scramble */}
+              <div className="relative h-12 sm:h-14 md:h-16 flex items-center overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div 
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
+                      style={{ backgroundColor: carouselItems[currentSlide].color }}
+                    />
+                    <span 
+                      className="text-sm sm:text-base md:text-lg font-semibold"
+                      style={{ color: carouselItems[currentSlide].color }}
+                    >
+                      {carouselItems[currentSlide].text}
+                    </span>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Tagline Text */}
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile ? '1.4' : '0.8' }}>
+                <TextScramble 
+                  texts={[
+                    "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
+                    "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
+                  ]}
+                  speed={10}
+                  delay={1000}
+                  holdDuration={4000}
+                  lineGap="0"
+                  className="inline"
+                />
+              </p>
+            </div>
 
             {/* Let&apos;s Talk Button */}
             <button className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group" style={{ color: '#000000' }}>

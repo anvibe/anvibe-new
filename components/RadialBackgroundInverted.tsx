@@ -2,9 +2,29 @@
 
 import { useEffect, useRef } from 'react'
 
-export default function RadialBackgroundInverted() {
+interface Gradient {
+  color1: string
+  color2: string
+  angle: number
+}
+
+interface RadialBackgroundInvertedProps {
+  gradient?: Gradient
+}
+
+export default function RadialBackgroundInverted({ gradient }: RadialBackgroundInvertedProps) {
+  const defaultGradient = { color1: '#0a0a09', color2: '#1a1a19', angle: 135 }
+  const currentGradient = gradient || defaultGradient
+  
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
   const animationFrameRef = useRef<number>()
+  const gradientRef = useRef<Gradient>(currentGradient)
+
+  // Update gradient ref when it changes (for canvas strokes)
+  useEffect(() => {
+    gradientRef.current = currentGradient
+  }, [currentGradient])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -85,15 +105,30 @@ export default function RadialBackgroundInverted() {
       for (let L = 0; L < layers; L++) {
         const rootStyle = getComputedStyle(document.documentElement)
         const strokeAlpha = parseFloat(rootStyle.getPropertyValue('--stroke-alpha')) || 0.95
-        // Use gradient colors for strokes (inverted)
         const alpha = strokeAlpha * (0.7 + 0.3 * (1 - L / layers))
         
-        // Create gradient for stroke
-        const gradient = ctx.createLinearGradient(0, 0, w, h)
-        gradient.addColorStop(0, `rgba(48, 96, 235, ${alpha})`) // #3060eb (hero blue)
-        gradient.addColorStop(1, `rgba(143, 53, 234, ${alpha})`) // #8f35ea (hero purple)
+        // Get current gradient from ref
+        const grad = gradientRef.current || currentGradient
         
-        ctx.strokeStyle = gradient
+        // Parse hex colors to RGB
+        const hexToRgb = (hex: string) => {
+          const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+          return result ? [
+            parseInt(result[1], 16),
+            parseInt(result[2], 16),
+            parseInt(result[3], 16)
+          ] : [42, 42, 41] // Default dark gray
+        }
+        
+        const color1 = hexToRgb(grad.color1)
+        const color2 = hexToRgb(grad.color2)
+        
+        // Create gradient for stroke using footer gradient colors
+        const strokeGradient = ctx.createLinearGradient(0, 0, w, h)
+        strokeGradient.addColorStop(0, `rgba(${color1[0]}, ${color1[1]}, ${color1[2]}, ${alpha * 0.4})`)
+        strokeGradient.addColorStop(1, `rgba(${color2[0]}, ${color2[1]}, ${color2[2]}, ${alpha * 0.4})`)
+        
+        ctx.strokeStyle = strokeGradient
         
         for (let i = 0; i < ARMS; i++) {
           const angle = (i / ARMS) * Math.PI * 2 + L * 0.002
@@ -121,16 +156,24 @@ export default function RadialBackgroundInverted() {
   }, [])
 
   return (
-    <canvas
-      ref={canvasRef}
-      id="radial-bg-inverted"
-      className="absolute inset-0 w-full h-full block pointer-events-none"
-      style={{
-        background: '#0a0a09', // Match footer background
-        transform: 'translateZ(0)',
-        zIndex: 0,
-      }}
-    />
+    <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+      {/* Static background */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 w-full h-full"
+        style={{
+          background: '#0a0a09',
+        }}
+      />
+      {/* Canvas animation layer */}
+      <canvas
+        ref={canvasRef}
+        id="radial-bg-inverted"
+        className="absolute inset-0 w-full h-full block pointer-events-none"
+        style={{
+          transform: 'translateZ(0)',
+        }}
+      />
+    </div>
   )
 }
-
