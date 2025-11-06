@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ArrowRight, X } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import RadialBackground from './RadialBackground'
 
@@ -81,14 +81,22 @@ export default function Hero() {
                   style={{ paddingTop: '20px' }}
                   aria-label="Toggle menu"
                 >
-                  {isMenuOpen ? (
-                    <X size={24} className="text-white" />
-                  ) : (
-                    <>
-                      <div className="bg-white h-[2px] rounded-full w-16"></div>
-                      <div className="bg-white h-[2px] rounded-full w-[34px]"></div>
-                    </>
-                  )}
+                  <div className="relative w-16 h-[18px] flex items-center justify-end">
+                    {/* Top bar */}
+                    <motion.div
+                      className="bg-white h-[2px] rounded-full absolute right-0"
+                      initial={{ width: 64, y: 0, rotate: 0 }}
+                      animate={isMenuOpen ? { width: 24, y: 8, rotate: 45 } : { width: 64, y: 0, rotate: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                    {/* Bottom bar */}
+                    <motion.div
+                      className="bg-white h-[2px] rounded-full absolute right-0"
+                      initial={{ width: 34, y: 9, rotate: 0 }}
+                      animate={isMenuOpen ? { width: 24, y: 8, rotate: -45 } : { width: 34, y: 9, rotate: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                  </div>
                 </motion.button>
 
                 {/* Dropdown Menu */}
