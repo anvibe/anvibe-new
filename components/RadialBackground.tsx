@@ -26,6 +26,7 @@ export default function RadialBackground() {
     let w = 0, h = 0, cx = 0, cy = 0, R = 0
 
     function resize() {
+      if (!canvas) return
       dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1))
       w = Math.floor(canvas.clientWidth * dpr)
       h = Math.floor(canvas.clientHeight * dpr)
