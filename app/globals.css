@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --stroke: 4,4,3;
+  --stroke-alpha: 0.95;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #EEF4ED;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Improve scroll performance */
+  overscroll-behavior: none;
+  /* Smooth font rendering during scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* Enable smooth scrolling on all browsers */
+  -webkit-overflow-scrolling: touch;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animated gradient background */
+.hero-gradient {
+  background: linear-gradient(301deg, #3060eb, #8f35ea);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 11s ease infinite;
+  -moz-animation: AnimationName 11s ease infinite;
+  animation: AnimationName 11s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% { background-position: 0% 7%; }
+  50% { background-position: 100% 94%; }
+  100% { background-position: 0% 7%; }
+}
+
+@-moz-keyframes AnimationName {
+  0% { background-position: 0% 7%; }
+  50% { background-position: 100% 94%; }
+  100% { background-position: 0% 7%; }
+}
+
+@keyframes AnimationName {
+  0% { background-position: 0% 7%; }
+  50% { background-position: 100% 94%; }
+  100% { background-position: 0% 7%; }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 7%; }
+  50% { background-position: 100% 94%; }
+  100% { background-position: 0% 7%; }
+}
+
+/* Boldonse Font */
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Apply Boldonse to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+/* Force text color for dark sections */
+section[style*="background: #040403"],
+section[style*="background:#040403"],
+section[style*="background: '#040403'"],
+section[style*="background:'#040403'"] {
+  color: #EEF4ED;
+}
+
+section[style*="background: #040403"] *,
+section[style*="background:#040403"] *,
+section[style*="background: '#040403'"] *,
+section[style*="background:'#040403'"] * {
+  color: inherit;
+}
+
+/* Input placeholder colors for dark sections */
+section[style*="background: #040403"] input::placeholder,
+section[style*="background:#040403"] input::placeholder,
+section[style*="background: '#040403'"] input::placeholder,
+section[style*="background:'#040403'"] input::placeholder,
+section[style*="background: #040403"] textarea::placeholder,
+section[style*="background:#040403"] textarea::placeholder,
+section[style*="background: '#040403'"] textarea::placeholder,
+section[style*="background:'#040403'"] textarea::placeholder {
+  color: rgba(238, 244, 237, 0.5);
+}
+
+/* Remove grid-template-columns for md:grid-cols-2 */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+  }
+}
+
