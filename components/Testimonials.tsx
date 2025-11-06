@@ -22,6 +22,11 @@ const techStack = [
     description: 'Anthropic\'s Claude AI helps us craft intelligent solutions and enhance our creative process with advanced reasoning capabilities.',
   },
   {
+    logo: 'chatgpt.svg',
+    name: 'ChatGPT',
+    description: 'OpenAI\'s ChatGPT helps us generate content, solve complex problems, and enhance our workflow with advanced language understanding and generation.',
+  },
+  {
     logo: 'supabase.svg',
     name: 'Supabase',
     description: 'The open-source Firebase alternative. Supabase powers our backend infrastructure with real-time databases and authentication.',

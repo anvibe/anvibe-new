@@ -32,6 +32,7 @@ export default function PartnerLogos() {
     'cursor.svg',
     'figma.svg',
     'claude.svg',
+    'chatgpt.svg',
     'supabase.svg',
     'anthopic.svg',
     'vercel.svg',
