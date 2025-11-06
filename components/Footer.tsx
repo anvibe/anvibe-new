@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import RadialBackgroundInverted from './RadialBackgroundInverted'
 
@@ -85,10 +86,21 @@ export default function Footer() {
           </div>
 
           {/* Let's Talk Button */}
-          <button className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group mt-6 sm:mt-0" style={{ color: '#000000' }}>
+          <a 
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault()
+              const contactSection = document.getElementById('contact')
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
+            className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group mt-6 sm:mt-0" 
+            style={{ color: '#000000' }}
+          >
             <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s Talk</span>
             <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" style={{ color: '#000000' }} />
-          </button>
+          </a>
         </div>
       </div>
     </footer>

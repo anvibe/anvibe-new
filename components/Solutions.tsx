@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
 
@@ -80,13 +81,23 @@ export default function Solutions() {
               </h2>
               <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(5)</span>
             </div>
-            <button className="hidden md:flex items-center gap-4 px-5 py-5 rounded-tl-3xl rounded-br-3xl transition-colors group"
+            <a 
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                const contactSection = document.getElementById('contact')
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+              className="hidden md:flex items-center gap-4 px-5 py-5 rounded-tl-3xl rounded-br-3xl transition-colors group"
               style={{ background: 'rgba(238, 244, 237, 0.75)', color: '#1e1e1e' }}
               onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(238, 244, 237, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(238, 244, 237, 0.75)'}>
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(238, 244, 237, 0.75)'}
+            >
               <span className="text-lg font-normal tracking-tight">Let&apos;s Talk</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </ScrollAnimation>
 
