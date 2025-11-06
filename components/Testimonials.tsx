@@ -76,7 +76,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
           {/* Logo Image */}
           <div className="relative aspect-[4/3] sm:aspect-[752/817] rounded-xl sm:rounded-2xl overflow-hidden" style={{ background: '#030302' }}>
-            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8 z-20">
+            <div className="absolute inset-0 flex items-start sm:items-center justify-center p-4 sm:p-6 md:p-8 z-20 pt-[50px] sm:pt-6 md:pt-8">
               <div className="rounded-xl sm:rounded-2xl p-1.5 sm:p-2" style={{ background: '#0a0a09' }}>
                 <div className="rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex items-center justify-center" style={{ 
                   background: 'linear-gradient(to bottom, rgba(238, 244, 237, 0.05), rgba(238, 244, 237, 0.02))',

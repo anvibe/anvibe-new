@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight, Play, X } from 'lucide-react'
+import { Play, X } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
 
 export default function StorySection() {
@@ -70,25 +69,11 @@ export default function StorySection() {
 
                 {/* Bottom Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-10">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-6 md:gap-8">
-                    {/* Text */}
-                    <div className="max-w-full sm:max-w-[280px] opacity-80">
-                      <p className="text-sm sm:text-[15.6px] leading-[18px] sm:leading-[20.8px] text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        Telling your story that makes hearts skip<br className="hidden sm:block" />
-                        <span className="sm:hidden"> </span>a beat and minds remember.
-                      </p>
-                    </div>
-
-                    {/* Read More Button */}
-                    <Link
-                      href="#"
-                      className="bg-white/75 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center gap-3 sm:gap-4 hover:bg-white/90 transition-colors group shrink-0 w-full sm:w-auto justify-center sm:justify-start"
-                    >
-                      <span className="text-sm sm:text-[16.9px] leading-[20px] sm:leading-[22.88px] tracking-[-0.2px] sm:tracking-[-0.352px] text-[#1e1e1e]" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        Read more
-                      </span>
-                      <ArrowRight size={18} className="sm:w-5 sm:h-5 text-[#1e1e1e] group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                  <div className="max-w-full sm:max-w-[280px] opacity-80">
+                    <p className="text-sm sm:text-[15.6px] leading-[18px] sm:leading-[20.8px] text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
+                      Telling your story that makes hearts skip<br className="hidden sm:block" />
+                      <span className="sm:hidden"> </span>a beat and minds remember.
+                    </p>
                   </div>
                 </div>
               </>
