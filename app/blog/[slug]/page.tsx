@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { getBlogPostBySlug, getAllBlogSlugs, getBlogPosts } from '@/lib/content'
 import BlogNav from '@/components/BlogNav'
 import Footer from '@/components/Footer'
+import Contact from '@/components/Contact'
 import { remark } from 'remark'
 import html from 'remark-html'
 
@@ -156,6 +157,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         </section>
       )}
+
+      {/* Contact */}
+      <Contact />
 
       {/* Footer */}
       <Footer />

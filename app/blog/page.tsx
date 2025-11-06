@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { getBlogPosts } from '@/lib/content'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import Footer from '@/components/Footer'
+import Contact from '@/components/Contact'
 import PageNav from '@/components/PageNav'
 
 export default async function BlogPage() {
@@ -81,6 +82,9 @@ export default async function BlogPage() {
           </div>
         </div>
       </section>
+
+      {/* Contact */}
+      <Contact />
 
       {/* Footer */}
       <Footer />

@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { getProjectBySlug, getAllProjectSlugs, getProjects } from '@/lib/content'
 import { ExternalLink } from 'lucide-react'
 import Footer from '@/components/Footer'
+import Contact from '@/components/Contact'
 import ProjectNav from '@/components/ProjectNav'
-import TextScramble from '@/components/TextScramble'
 
 export async function generateStaticParams() {
   const slugs = getAllProjectSlugs()
@@ -275,6 +275,9 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
       </div>
+
+      {/* Contact */}
+      <Contact />
 
       {/* Footer */}
       <Footer />

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '@/components/Footer'
+import Contact from '@/components/Contact'
 import ScrollAnimation from '@/components/ScrollAnimation'
 
 export default function AboutPage() {
@@ -99,7 +100,7 @@ export default function AboutPage() {
                             { href: '/about', label: 'About' },
                             { href: '/vibecoding', label: 'Vibecoding' },
                             { href: '/blog', label: 'Blog' },
-                            { href: '/#contact', label: 'Contact' },
+                            { href: '#contact', label: 'Contact' },
                           ].map((item, index) => (
                             <motion.div
                               key={item.href}
@@ -109,7 +110,17 @@ export default function AboutPage() {
                             >
                               <Link 
                                 href={item.href}
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  if (item.href === '#contact') {
+                                    setTimeout(() => {
+                                      const contactSection = document.getElementById('contact')
+                                      if (contactSection) {
+                                        contactSection.scrollIntoView({ behavior: 'smooth' })
+                                      }
+                                    }, 100)
+                                  }
+                                }}
                                 className="text-lg sm:text-xl font-medium text-white hover:text-white/80 transition-colors"
                               >
                                 {item.label}
@@ -337,6 +348,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Contact */}
+      <Contact />
 
       {/* Footer */}
       <Footer />
