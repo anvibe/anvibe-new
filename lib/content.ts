@@ -79,3 +79,78 @@ export function getAllProjectSlugs(): string[] {
   return projects.map((project) => project.slug)
 }
 
+export interface BlogPost {
+  slug: string
+  title: string
+  date: string
+  excerpt?: string
+  image: string
+  author?: string
+  content: string
+}
+
+export function getBlogPosts(): BlogPost[] {
+  try {
+    const blogDir = path.join(contentDirectory, 'blog')
+    
+    if (!fs.existsSync(blogDir)) {
+      console.warn('Blog directory does not exist:', blogDir)
+      return []
+    }
+    
+    const files = fs.readdirSync(blogDir)
+    
+    if (files.length === 0) {
+      console.warn('No markdown files found in blog directory')
+      return []
+    }
+    
+    return files
+      .filter((filename) => filename.endsWith('.md'))
+      .map((filename) => {
+        try {
+          const filePath = path.join(blogDir, filename)
+          const fileContents = fs.readFileSync(filePath, 'utf8')
+          const { data, content } = matter(fileContents)
+          
+          return {
+            slug: filename.replace('.md', ''),
+            title: data.title || '',
+            date: data.date || '',
+            excerpt: data.excerpt || '',
+            image: data.image || '',
+            author: data.author || 'Anvibe Team',
+            content: content || '',
+          } as BlogPost
+        } catch (error) {
+          console.error(`Error parsing blog file ${filename}:`, error)
+          return null
+        }
+      })
+      .filter((post): post is BlogPost => post !== null)
+      .sort((a, b) => {
+        // Sort by date (newest first)
+        const dateA = new Date(a.date).getTime()
+        const dateB = new Date(b.date).getTime()
+        // Handle invalid dates by putting them last
+        if (isNaN(dateA) && isNaN(dateB)) return 0
+        if (isNaN(dateA)) return 1
+        if (isNaN(dateB)) return -1
+        return dateB - dateA
+      })
+  } catch (error) {
+    console.error('Error in getBlogPosts:', error)
+    return []
+  }
+}
+
+export function getBlogPostBySlug(slug: string): BlogPost | null {
+  const posts = getBlogPosts()
+  return posts.find((post) => post.slug === slug) || null
+}
+
+export function getAllBlogSlugs(): string[] {
+  const posts = getBlogPosts()
+  return posts.map((post) => post.slug)
+}
+
