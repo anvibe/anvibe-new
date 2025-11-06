@@ -2,6 +2,7 @@ import Hero from '@/components/Hero'
 import PartnerLogos from '@/components/PartnerLogos'
 import Projects from '@/components/Projects'
 import Solutions from '@/components/Solutions'
+import StorySection from '@/components/StorySection'
 import Testimonials from '@/components/Testimonials'
 // import Stats from '@/components/Stats'
 import Pricing from '@/components/Pricing'
@@ -17,6 +18,7 @@ export default async function Home() {
       <PartnerLogos />
       <Projects />
       <Solutions />
+      <StorySection />
       <Testimonials />
       {/* <Stats /> */}
       <Pricing />

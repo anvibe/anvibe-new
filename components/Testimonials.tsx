@@ -78,14 +78,18 @@ export default function Testimonials() {
                   border: '1px solid rgba(238, 244, 237, 0.1)'
                 }}>
                   <div className="relative w-48 h-48 flex items-center justify-center">
-                    <Image
-                      src={`/images/logos/${currentTech.logo}`}
-                      alt={currentTech.name}
-                      fill
-                      className="object-contain"
-                      sizes="192px"
-                      style={{ filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)' }}
-                    />
+                    <div className="absolute inset-4">
+                      <Image
+                        src={`/images/logos/${currentTech.logo}`}
+                        alt={currentTech.name}
+                        fill
+                        className="object-contain"
+                        sizes="160px"
+                        style={{ 
+                          filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)'
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
