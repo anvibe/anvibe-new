@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import RadialBackground from './RadialBackground'
+import TextScramble from './TextScramble'
 
 export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -126,7 +127,7 @@ export default function Hero() {
                             { href: '/', label: 'Home' },
                             { href: '/#projects', label: 'Works (8)' },
                             { href: '/about', label: 'About' },
-                            { href: '/#blog', label: 'Blog' },
+                            { href: '/blog', label: 'Blog' },
                             { href: '/#contact', label: 'Contact' },
                           ].map((item, index) => (
                             <motion.div
@@ -190,10 +191,18 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-start sm:items-end justify-between relative gap-4 sm:gap-0"
           >
             {/* Tagline Text */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight max-w-full sm:max-w-[70%]" style={{ paddingTop: '0' }}>
-              We are VibeCoders, crafting interactive experiences<br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>with next-gen AI tools and LLM-driven engines.<br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>Our work bridges design, intelligence, and emotion.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight max-w-full sm:max-w-[70%]" style={{ paddingTop: '0', lineHeight: '0.8' }}>
+              <TextScramble 
+                texts={[
+                  "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
+                  "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
+                ]}
+                speed={10}
+                delay={1000}
+                holdDuration={4000}
+                lineGap="0"
+                className="inline"
+              />
             </p>
 
             {/* Let&apos;s Talk Button */}

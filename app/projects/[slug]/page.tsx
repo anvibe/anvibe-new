@@ -5,6 +5,7 @@ import { getProjectBySlug, getAllProjectSlugs, getProjects } from '@/lib/content
 import { ExternalLink } from 'lucide-react'
 import Footer from '@/components/Footer'
 import ProjectNav from '@/components/ProjectNav'
+import TextScramble from '@/components/TextScramble'
 
 export async function generateStaticParams() {
   const slugs = getAllProjectSlugs()
@@ -200,7 +201,15 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#EEF4ED' }}>Let&apos;s talk</h2>
               <p className="text-lg mb-8" style={{ color: '#EEF4ED', opacity: 0.9 }}>
-            We&apos;d love to hear from you — whether you have a project in mind, or just want to say hi.
+            <TextScramble 
+              texts={[
+                "We'd love to hear from you — whether you have a project in mind, or just want to say hi.",
+                "Ready to start your next project? Let's create something amazing together."
+              ]}
+              speed={20}
+              delay={500}
+              holdDuration={5000}
+            />
           </p>
           <div className="bg-black/10 border border-white/6 rounded-2xl p-6 mb-6">
             <div className="flex items-center gap-4 mb-6">
