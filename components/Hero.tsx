@@ -197,9 +197,9 @@ export default function Hero() {
             </p>
 
             {/* Let&apos;s Talk Button */}
-            <button className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group">
-              <span className="text-base sm:text-lg font-normal text-black tracking-tight">Let&apos;s Talk</span>
-              <ArrowRight size={18} className="sm:w-5 sm:h-5 text-black group-hover:translate-x-1 transition-transform" />
+            <button className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group" style={{ color: '#000000' }}>
+              <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s Talk</span>
+              <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" style={{ color: '#000000' }} />
             </button>
           </motion.div>
         </div>
