@@ -118,7 +118,7 @@ export default function RadialBackground() {
     <canvas
       ref={canvasRef}
       id="radial-bg"
-      className="fixed inset-0 w-screen h-screen block pointer-events-none"
+      className="absolute inset-0 w-full h-full block pointer-events-none"
       style={{
         background: 'linear-gradient(301deg, #3060eb, #8f35ea)',
         backgroundSize: '400% 400%',
