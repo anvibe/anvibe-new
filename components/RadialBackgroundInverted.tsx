@@ -26,6 +26,7 @@ export default function RadialBackgroundInverted() {
     let w = 0, h = 0, cx = 0, cy = 0, R = 0
 
     function resize() {
+      if (!canvas) return
       dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1))
       w = Math.floor(canvas.clientWidth * dpr)
       h = Math.floor(canvas.clientHeight * dpr)
@@ -37,6 +38,7 @@ export default function RadialBackgroundInverted() {
     }
 
     function drawArm(baseAngle: number, t: number) {
+      if (!ctx) return
       const steps = 90
       const inner = R * INNER_HOLE
       const amp = R * AMP
@@ -58,6 +60,7 @@ export default function RadialBackgroundInverted() {
 
     let start = performance.now()
     function frame(now: number) {
+      if (!ctx) return
       const t = (now - start) / 1000
       ctx.clearRect(0, 0, w, h)
 
