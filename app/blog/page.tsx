@@ -19,11 +19,11 @@ export default async function BlogPage() {
           <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="mb-16">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#EEF4ED' }}>
-                  Creative dispatch
+                <h1 className="text-5xl md:text-6xl font-bold mb-8" style={{ color: '#EEF4ED' }}>
+                  Latest Insights & Updates
                 </h1>
                 <p className="text-xl max-w-md" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                  Insights, inspiration, and ideas—straight from our studio.
+                  Stay updated with the latest insights about AI-powered development
                 </p>
               </div>
             </ScrollAnimation>

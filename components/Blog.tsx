@@ -20,11 +20,11 @@ export default function Blog() {
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="flex flex-col md:flex-row justify-between items-start mb-16">
             <div className="mb-8 md:mb-0">
-              <h2 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#EEF4ED' }}>
-                Creative dispatch
+              <h2 className="text-5xl md:text-6xl font-bold mb-8" style={{ color: '#EEF4ED' }}>
+                Latest Insights & Updates
               </h2>
               <p className="text-xl max-w-md mb-6" style={{ color: '#EEF4ED' }}>
-                Insights, inspiration, and ideas—straight from our studio.
+                Stay updated with the latest insights about AI-powered development
               </p>
               <Link 
                 href="/blog"

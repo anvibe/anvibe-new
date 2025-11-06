@@ -3,7 +3,7 @@ import PartnerLogos from '@/components/PartnerLogos'
 import Projects from '@/components/Projects'
 import Solutions from '@/components/Solutions'
 import Testimonials from '@/components/Testimonials'
-import Stats from '@/components/Stats'
+// import Stats from '@/components/Stats'
 import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import Blog from '@/components/Blog'
@@ -18,7 +18,7 @@ export default async function Home() {
       <Projects />
       <Solutions />
       <Testimonials />
-      <Stats />
+      {/* <Stats /> */}
       <Pricing />
       <FAQ />
       <Blog />
