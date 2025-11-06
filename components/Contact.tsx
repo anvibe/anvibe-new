@@ -39,9 +39,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 relative overflow-hidden" style={{ background: '#040403' }}>
-      {/* Background Gradient */}
-      <div className="absolute inset-0 blur-3xl" style={{ background: 'linear-gradient(to right, rgba(41, 31, 30, 0.1), rgba(41, 31, 30, 0.15), rgba(41, 31, 30, 0.1))' }}></div>
-
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
