@@ -56,11 +56,11 @@ export default function PartnerLogos() {
   }
 
   return (
-    <section className="py-8 overflow-hidden" style={{ background: '#040403' }}>
+    <section className="py-6 sm:py-8 overflow-hidden" style={{ background: '#040403' }}>
       <div className="relative">
         <div 
           ref={containerRef}
-          className="flex gap-16 items-center"
+          className="flex gap-8 sm:gap-12 md:gap-16 items-center"
           style={{ width: 'fit-content' }}
         >
           {/* Duplicate logos for seamless loop */}
@@ -70,16 +70,16 @@ export default function PartnerLogos() {
             return (
               <div
                 key={idx}
-                className="flex-shrink-0 flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity"
+                className="flex-shrink-0 flex items-center gap-2 sm:gap-3 opacity-70 hover:opacity-100 transition-opacity"
               >
                 {/* Logo Image */}
-                <div className="relative w-12 h-12 flex-shrink-0">
+                <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex-shrink-0">
                   <Image
                     src={`/images/logos/${logo}`}
                     alt={logoName}
                     fill
                     className="object-contain"
-                    sizes="48px"
+                    sizes="(max-width: 640px) 32px, (max-width: 768px) 40px, 48px"
                     style={{ filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)' }}
                     onError={(e) => {
                       // Fallback if image doesn't exist
@@ -89,7 +89,7 @@ export default function PartnerLogos() {
                   />
                 </div>
                 {/* Logo Text */}
-                  <span className="text-2xl font-bold whitespace-nowrap" style={{ color: '#EEF4ED' }}>
+                  <span className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap" style={{ color: '#EEF4ED' }}>
                   {logoName}
                 </span>
               </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
 
@@ -39,7 +39,25 @@ const solutions = [
 
 export default function Solutions() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const cardsToShow = 3
+  const [cardsToShow, setCardsToShow] = useState(3)
+  
+  // Update cards to show based on screen size
+  useEffect(() => {
+    const updateCardsToShow = () => {
+      if (window.innerWidth < 640) {
+        setCardsToShow(1) // Mobile: 1 card
+      } else if (window.innerWidth < 1024) {
+        setCardsToShow(2) // Tablet: 2 cards
+      } else {
+        setCardsToShow(3) // Desktop: 3 cards
+      }
+    }
+    
+    updateCardsToShow()
+    window.addEventListener('resize', updateCardsToShow)
+    return () => window.removeEventListener('resize', updateCardsToShow)
+  }, [])
+  
   const maxIndex = Math.max(0, solutions.length - cardsToShow)
 
   const nextSlide = () => {
@@ -51,16 +69,16 @@ export default function Solutions() {
   }
 
   return (
-    <section id="solutions" className="py-24 px-6 sm:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
+    <section id="solutions" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
       <div className="max-w-[1520px] mx-auto">
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
-          <div className="flex justify-between items-end mb-16">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-12 md:mb-16 gap-4">
             <div className="flex items-end gap-2.5">
-              <h2 className="text-5xl md:text-6xl font-bold leading-[70px]" style={{ color: '#EEF4ED' }}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
                 Solutions
               </h2>
-              <span className="text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(5)</span>
+              <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(5)</span>
             </div>
             <button className="hidden md:flex items-center gap-4 px-5 py-5 rounded-tl-3xl rounded-br-3xl transition-colors group"
               style={{ background: 'rgba(238, 244, 237, 0.75)', color: '#1e1e1e' }}
@@ -76,35 +94,35 @@ export default function Solutions() {
         <div className="relative">
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out gap-3"
+              className="flex transition-transform duration-500 ease-in-out gap-2 sm:gap-3"
               style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
             >
               {solutions.map((solution, index) => (
                 <div 
                   key={index} 
                   className="flex-shrink-0"
-                  style={{ width: `calc(${100 / cardsToShow}% - 16px)` }}
+                  style={{ width: `calc(${100 / cardsToShow}% - ${(cardsToShow - 1) * 8 / cardsToShow}px)` }}
                 >
-                  <div className="rounded-2xl p-2 h-full" style={{ background: '#0a0a09' }}>
-                    <div className="rounded-xl p-6 h-full flex flex-col" style={{ 
+                  <div className="rounded-xl sm:rounded-2xl p-1.5 sm:p-2 h-full" style={{ background: '#0a0a09' }}>
+                    <div className="rounded-lg sm:rounded-xl p-4 sm:p-6 h-full flex flex-col" style={{ 
                       background: 'linear-gradient(to bottom, rgba(238, 244, 237, 0.05), rgba(238, 244, 237, 0.02))',
                       border: '1px solid rgba(238, 244, 237, 0.1)'
                     }}>
-                      <div className="flex flex-col gap-2 mb-6">
+                      <div className="flex flex-col gap-2 mb-4 sm:mb-6">
                         <div className="flex items-center gap-1.5">
                           <div 
-                            className="w-2.5 h-2.5 rounded-lg shrink-0" 
+                            className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-lg shrink-0" 
                             style={{ backgroundColor: solution.dotColor }}
                           />
-                          <span className="text-sm font-normal" style={{ color: '#EEF4ED' }}>
+                          <span className="text-xs sm:text-sm font-normal" style={{ color: '#EEF4ED' }}>
                             {solution.number}
                           </span>
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold leading-[28.8px] tracking-tight" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold leading-tight tracking-tight" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
                           {solution.title}
                         </h3>
                       </div>
-                      <p className="text-base leading-[20.8px] flex-grow" style={{ color: '#EEF4ED', opacity: 0.7 }}>
+                      <p className="text-sm sm:text-base leading-[18px] sm:leading-[20.8px] flex-grow" style={{ color: '#EEF4ED', opacity: 0.7 }}>
                         {solution.description}
                       </p>
                     </div>
@@ -115,10 +133,10 @@ export default function Solutions() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-end gap-4 mt-8">
+          <div className="flex justify-end gap-3 sm:gap-4 mt-6 sm:mt-8">
             <button
               onClick={prevSlide}
-              className="w-24 h-24 rounded-full border-2 flex items-center justify-center transition-all shadow-lg hover:scale-105"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-2 flex items-center justify-center transition-all shadow-lg hover:scale-105"
               style={{ background: '#0a0a09', borderColor: 'rgba(238, 244, 237, 0.2)' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#030302'
@@ -129,11 +147,11 @@ export default function Solutions() {
                 e.currentTarget.style.borderColor = 'rgba(238, 244, 237, 0.2)'
               }}
             >
-              <ArrowLeft size={24} style={{ color: '#EEF4ED' }} />
+              <ArrowLeft size={20} className="sm:w-6 sm:h-6" style={{ color: '#EEF4ED' }} />
             </button>
             <button
               onClick={nextSlide}
-              className="w-24 h-24 rounded-full border-2 flex items-center justify-center transition-all shadow-lg hover:scale-105"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-2 flex items-center justify-center transition-all shadow-lg hover:scale-105"
               style={{ background: '#0a0a09', borderColor: 'rgba(238, 244, 237, 0.2)' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#030302'
@@ -144,7 +162,7 @@ export default function Solutions() {
                 e.currentTarget.style.borderColor = 'rgba(238, 244, 237, 0.2)'
               }}
             >
-              <ArrowRight size={24} style={{ color: '#EEF4ED' }} />
+              <ArrowRight size={20} className="sm:w-6 sm:h-6" style={{ color: '#EEF4ED' }} />
             </button>
           </div>
         </div>

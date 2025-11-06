@@ -57,34 +57,34 @@ export default function Testimonials() {
   const currentTech = techStack[currentIndex]
 
   return (
-    <section className="py-24 px-6 sm:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
       <div className="max-w-[1520px] mx-auto">
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
-          <div className="mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold leading-[70px]" style={{ color: '#EEF4ED' }}>
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
               Our stack
             </h2>
           </div>
         </ScrollAnimation>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
           {/* Logo Image */}
-          <div className="relative aspect-[752/817] rounded-2xl overflow-hidden" style={{ background: '#030302' }}>
-            <div className="absolute inset-0 flex items-center justify-center p-8 z-20">
-              <div className="rounded-2xl p-2" style={{ background: '#0a0a09' }}>
-                <div className="rounded-xl p-8 flex items-center justify-center" style={{ 
+          <div className="relative aspect-[4/3] sm:aspect-[752/817] rounded-xl sm:rounded-2xl overflow-hidden" style={{ background: '#030302' }}>
+            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8 z-20">
+              <div className="rounded-xl sm:rounded-2xl p-1.5 sm:p-2" style={{ background: '#0a0a09' }}>
+                <div className="rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex items-center justify-center" style={{ 
                   background: 'linear-gradient(to bottom, rgba(238, 244, 237, 0.05), rgba(238, 244, 237, 0.02))',
                   border: '1px solid rgba(238, 244, 237, 0.1)'
                 }}>
-                  <div className="relative w-48 h-48 flex items-center justify-center">
-                    <div className="absolute inset-4">
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center">
+                    <div className="absolute inset-2 sm:inset-3 md:inset-4">
                       <Image
                         src={`/images/logos/${currentTech.logo}`}
                         alt={currentTech.name}
                         fill
                         className="object-contain"
-                        sizes="160px"
+                        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
                         style={{ 
                           filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)'
                         }}
@@ -94,13 +94,13 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" style={{ border: '1px solid rgba(238, 244, 237, 0.1)' }} />
-            <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 max-w-sm">
-                <h4 className="font-semibold" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>{currentTech.name}</h4>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="w-px h-4 bg-white/50"></div>
-                  <p className="text-sm" style={{ color: '#EEF4ED', opacity: 0.8 }}>Tech Stack</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl sm:rounded-2xl" style={{ border: '1px solid rgba(238, 244, 237, 0.1)' }} />
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-10">
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 sm:p-4 max-w-full sm:max-w-sm">
+                <h4 className="font-semibold text-sm sm:text-base" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>{currentTech.name}</h4>
+                <div className="flex items-center gap-2 mt-1 sm:mt-2">
+                  <div className="w-px h-3 sm:h-4 bg-white/50"></div>
+                  <p className="text-xs sm:text-sm" style={{ color: '#EEF4ED', opacity: 0.8 }}>Tech Stack</p>
                 </div>
               </div>
             </div>
@@ -108,30 +108,30 @@ export default function Testimonials() {
 
           {/* Description */}
           <ScrollAnimation direction="right" delay={0.2}>
-            <div className="p-8 md:p-12">
-              <h3 className="text-4xl md:text-5xl font-bold leading-tight mb-8" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
+            <div className="p-4 sm:p-6 md:p-8 lg:p-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 sm:mb-8" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
                 {currentTech.description}
               </h3>
 
               {/* Navigation */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <button
                   onClick={prevSlide}
-                  className="p-2 rounded-full transition-colors"
+                  className="p-1.5 sm:p-2 rounded-full transition-colors"
                   style={{ backgroundColor: 'rgba(10, 10, 9, 0.5)' }}
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(10, 10, 9, 0.8)'}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(10, 10, 9, 0.5)'}
                 >
-                  <ArrowLeft size={24} style={{ color: '#EEF4ED' }} />
+                  <ArrowLeft size={20} className="sm:w-6 sm:h-6" style={{ color: '#EEF4ED' }} />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="p-2 rounded-full transition-colors"
+                  className="p-1.5 sm:p-2 rounded-full transition-colors"
                   style={{ backgroundColor: 'rgba(10, 10, 9, 0.5)' }}
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(10, 10, 9, 0.8)'}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(10, 10, 9, 0.5)'}
                 >
-                  <ArrowRight size={24} style={{ color: '#EEF4ED' }} />
+                  <ArrowRight size={20} className="sm:w-6 sm:h-6" style={{ color: '#EEF4ED' }} />
                 </button>
               </div>
             </div>

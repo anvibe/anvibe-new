@@ -47,13 +47,13 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-24 px-6 sm:px-8" style={{ background: '#040403' }}>
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8" style={{ background: '#040403' }}>
       <div className="max-w-3xl mx-auto">
         <ScrollAnimation direction="up" delay={0.1}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-16" style={{ color: '#EEF4ED' }}>FAQ</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 md:mb-16" style={{ color: '#EEF4ED' }}>FAQ</h2>
         </ScrollAnimation>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <ScrollAnimation key={index} direction="up" delay={0.2 + index * 0.05}>
             <div
@@ -62,22 +62,22 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full py-6 flex items-center justify-between text-left transition-colors"
+                className="w-full py-4 sm:py-6 flex items-center justify-between text-left transition-colors"
                 style={{ color: '#EEF4ED' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#EEF4ED'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#EEF4ED'}
               >
-                <span className="text-lg font-medium pr-4">{faq.question}</span>
+                <span className="text-base sm:text-lg font-medium pr-3 sm:pr-4">{faq.question}</span>
                 <ChevronDown
-                  size={20}
-                  className={`flex-shrink-0 transition-transform ${
+                  size={18}
+                  className={`flex-shrink-0 transition-transform sm:w-5 sm:h-5 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                   style={{ color: '#EEF4ED' }}
                 />
               </button>
               {openIndex === index && (
-                <div className="pb-6" style={{ color: '#EEF4ED' }}>
+                <div className="pb-4 sm:pb-6 text-sm sm:text-base" style={{ color: '#EEF4ED' }}>
                   {faq.answer}
                 </div>
               )}
