@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import ScrollAnimation from './ScrollAnimation'
 import TextScramble from './TextScramble'
@@ -11,6 +11,18 @@ export default function Contact() {
     email: '',
     message: '',
   })
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,15 +48,19 @@ export default function Contact() {
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>Let's talk</h2>
             <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4" style={{ color: '#EEF4ED' }}>
-              <TextScramble 
-                texts={[
-                  "We'd love to hear from you — whether you have a project in mind, or just want to say hi.",
-                  "Ready to start your next project? Let's create something amazing together."
-                ]}
-                speed={10}
-                delay={500}
-                holdDuration={5000}
-              />
+              {isMobile ? (
+                "We'd love to hear from you — whether you have a project in mind, or just want to say hi."
+              ) : (
+                <TextScramble 
+                  texts={[
+                    "We'd love to hear from you — whether you have a project in mind, or just want to say hi.",
+                    "Ready to start your next project? Let's create something amazing together."
+                  ]}
+                  speed={10}
+                  delay={500}
+                  holdDuration={5000}
+                />
+              )}
             </p>
           </div>
         </ScrollAnimation>

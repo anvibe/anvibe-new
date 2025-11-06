@@ -261,7 +261,7 @@ export default function Hero() {
                       style={{ backgroundColor: carouselItems[currentSlide].color }}
                     />
                     <span 
-                      className="text-sm sm:text-base md:text-lg font-semibold"
+                      className="text-lg sm:text-base md:text-lg font-semibold"
                       style={{ color: carouselItems[currentSlide].color }}
                     >
                       {carouselItems[currentSlide].text}
@@ -271,18 +271,22 @@ export default function Hero() {
               </div>
 
               {/* Tagline Text */}
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile ? '1.4' : '0.8' }}>
-                <TextScramble 
-                  texts={[
-                    "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
-                    "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
-                  ]}
-                  speed={10}
-                  delay={1000}
-                  holdDuration={4000}
-                  lineGap="0"
-                  className="inline"
-                />
+              <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile ? '1.4' : '0.8' }}>
+                {isMobile ? (
+                  <span dangerouslySetInnerHTML={{ __html: "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion." }} />
+                ) : (
+                  <TextScramble 
+                    texts={[
+                      "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
+                      "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
+                    ]}
+                    speed={10}
+                    delay={1000}
+                    holdDuration={4000}
+                    lineGap="0"
+                    className="inline"
+                  />
+                )}
               </p>
             </div>
 
