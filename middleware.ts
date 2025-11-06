@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' blob: data: https:;
-    connect-src 'self' https:;
+    connect-src 'self' https: blob:;
     frame-src 'self' https:;
   `.replace(/\s{2,}/g, ' ').trim()
 

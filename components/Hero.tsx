@@ -113,9 +113,9 @@ export default function Hero() {
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8" style={{ height: '100%', minHeight: '100dvh' }}>
           {/* Top Section */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 pt-5 sm:pt-0">
+          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8" style={{ paddingTop: '20px' }}>
             {/* Logo and Menu Row */}
-            <div className="flex items-start sm:items-center justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap">
+            <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap">
               {/* Brand Logo */}
               <motion.div 
                 initial={{ opacity: 0, y: -20 }}
@@ -123,7 +123,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 className="flex-shrink-0 max-w-full sm:max-w-[477px]"
               >
-                <div className="h-auto sm:h-[120px] md:h-[164px] flex items-start sm:items-center">
+                <div className="h-auto sm:h-[120px] md:h-[164px] flex items-start">
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white boldonse-regular">
                     Anvibe
                   </div>
@@ -135,7 +135,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                className="flex-shrink-0 relative"
+                className="flex-shrink-0 relative flex items-start"
                 ref={menuRef}
               >
                 <motion.button 
@@ -143,8 +143,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="flex flex-col gap-[9px] h-10 items-end justify-center w-12 sm:w-16 relative z-50"
-                  style={{ paddingTop: isMobile ? '0' : '12px' }}
+                  className="flex flex-col gap-[9px] h-10 items-end justify-start w-12 sm:w-16 relative z-50"
                   aria-label="Toggle menu"
                 >
                   <div className="relative w-12 sm:w-16 h-[18px] flex items-center justify-end">

@@ -198,14 +198,6 @@ export default function VibecodingPage() {
               <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-8 sm:mb-10" style={{ color: '#EEF4ED', opacity: 0.8 }}>
                 Vibe coders don&apos;t just write code—they orchestrate AI tools to bring their creative visions to life, focusing on innovation rather than syntax.
               </p>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold" style={{ 
-                background: 'linear-gradient(135deg, #3060eb 0%, #8f35ea 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
-                Human + AI = Vibecoding
-              </div>
             </ScrollAnimation>
           </div>
         </div>
