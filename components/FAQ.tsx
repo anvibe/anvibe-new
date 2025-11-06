@@ -50,7 +50,7 @@ export default function FAQ() {
     <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8" style={{ background: '#040403' }}>
       <div className="max-w-3xl mx-auto">
         <ScrollAnimation direction="up" delay={0.1}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 md:mb-16" style={{ color: '#EEF4ED' }}>FAQ</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 md:mb-16 text-center" style={{ color: '#EEF4ED' }}>FAQ</h2>
         </ScrollAnimation>
 
         <div className="space-y-3 sm:space-y-4">
