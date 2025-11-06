@@ -68,7 +68,7 @@ export default function Testimonials() {
           {/* Quote */}
           <ScrollAnimation direction="right" delay={0.2}>
             <div className="p-8 md:p-12">
-              <h3 className="text-4xl md:text-5xl font-bold leading-tight mb-8" style={{ color: '#EEF4ED' }}>
+              <h3 className="text-4xl md:text-5xl font-bold leading-tight mb-8" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
                 {currentTestimonial.quote}
               </h3>
 

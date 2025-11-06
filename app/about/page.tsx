@@ -148,15 +148,15 @@ export default function AboutPage() {
               </div>
 
               {/* Heading */}
-              <div className="flex flex-col items-center text-center max-w-full">
-                <h1 className="text-5xl md:text-[56px] font-bold tracking-[-1.8px] !leading-[60px] mb-0" style={{ color: '#EEF4ED' }}>
+              <div className="flex flex-col items-center text-center max-w-full gap-8">
+                <h1 className="text-5xl md:text-[56px] font-bold tracking-[-1.8px] !leading-[56px]" style={{ color: '#EEF4ED' }}>
                   We help brands grow with design
                 </h1>
-                <h2 className="text-5xl md:text-[56px] font-bold tracking-[-1.8px] !leading-[60px] mt-0" style={{ color: '#EEF4ED' }}>
+                <h2 className="text-5xl md:text-[56px] font-bold tracking-[-1.8px] !leading-[56px]" style={{ color: '#EEF4ED' }}>
                   that&apos;s intentional and{' '}
                   <span style={{ color: '#EEF4ED', opacity: 0.7 }}>messaging</span>
                 </h2>
-                <h3 className="text-5xl md:text-[56px] font-bold tracking-[-1.8px] !leading-[60px]" style={{ color: '#EEF4ED', opacity: 0.7 }}>
+                <h3 className="text-5xl md:text-[56px] font-bold tracking-[-1.8px] !leading-[56px]" style={{ color: '#EEF4ED', opacity: 0.7 }}>
                   that actually resonates.
                 </h3>
               </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
               <ScrollAnimation direction="left" delay={0.1}>
                 <div className="bg-[#eef0f6] rounded-xl p-8 flex flex-col justify-between w-full lg:w-[748px]">
                   <div className="mb-8">
-                    <h2 className="text-4xl md:text-[45px] font-bold leading-[48px] tracking-[-1.44px] mb-6" style={{ color: '#040403' }}>
+                    <h2 className="text-4xl md:text-[45px] font-bold leading-[64px] tracking-[-1.44px] mb-6" style={{ color: '#040403' }}>
                       An obsession with creative<br />excellence.
                     </h2>
                     <p className="text-[15.4px] leading-[20.8px] max-w-[430px]" style={{ color: '#040403', opacity: 0.8 }}>
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 <div className="bg-white box-border flex h-[49px] items-center justify-center px-[17px] py-0 rounded-br-[24px] rounded-tl-[24px]">
                   <span className="text-base text-center" style={{ color: '#040403' }}>The Team</span>
                 </div>
-                <h2 className="text-5xl md:text-[57px] font-bold text-center !leading-[60px] tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
+                <h2 className="text-5xl md:text-[57px] font-bold text-center !leading-[70px] tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   The superstar team,<br />always ready
                 </h2>
               </div>
@@ -296,7 +296,7 @@ export default function AboutPage() {
                   <div className="bg-white box-border flex h-[49px] items-center justify-center px-[17px] py-0 rounded-br-[24px] rounded-tl-[24px]">
                     <span className="text-base" style={{ color: '#040403' }}>Awards</span>
                   </div>
-                  <h2 className="text-4xl md:text-[44.6px] font-bold leading-[48px] tracking-[-1.44px]" style={{ color: '#EEF4ED' }}>
+                  <h2 className="text-4xl md:text-[44.6px] font-bold leading-[60px] tracking-[-1.44px]" style={{ color: '#EEF4ED' }}>
                     Things we&apos;re<br />proud of
                   </h2>
                 </div>

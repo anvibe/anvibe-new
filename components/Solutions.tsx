@@ -100,7 +100,7 @@ export default function Solutions() {
                             {solution.number}
                           </span>
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold leading-[28.8px] tracking-tight" style={{ color: '#EEF4ED' }}>
+                        <h3 className="text-xl md:text-2xl font-bold leading-[28.8px] tracking-tight" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
                           {solution.title}
                         </h3>
                       </div>

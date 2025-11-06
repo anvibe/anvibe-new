@@ -54,7 +54,7 @@ export default function Pricing() {
             >
               {/* Plan Header */}
               <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-4" style={{ color: '#EEF4ED' }}>{plan.name}</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>{plan.name}</h3>
                 <div className="flex items-baseline gap-2 mb-2">
                   {plan.priceRange ? (
                     <>

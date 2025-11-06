@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               <p className="text-sm mb-6" style={{ color: '#EEF4ED', opacity: 0.7 }}>
                 {post.date} {post.author && `• ${post.author}`}
               </p>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight" style={{ color: '#EEF4ED' }}>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif', lineHeight: '1.2' }}>
                 {post.title}
               </h1>
               {post.excerpt && (

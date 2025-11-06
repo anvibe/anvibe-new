@@ -62,7 +62,7 @@ export default async function BlogPage() {
                             <p className="text-sm mb-3" style={{ color: '#EEF4ED', opacity: 0.7 }}>
                               {post.date}
                             </p>
-                            <h3 className="text-xl font-semibold leading-tight transition-colors group-hover:opacity-80" style={{ color: '#EEF4ED' }}>
+                            <h3 className="text-xl font-bold leading-tight transition-colors group-hover:opacity-80" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
                               {post.title}
                             </h3>
                             {post.excerpt && (
