@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import ScrollAnimation from './ScrollAnimation'
 
 export default function Contact() {
@@ -43,9 +44,33 @@ export default function Contact() {
         <ScrollAnimation direction="up" delay={0.2}>
           <div className="rounded-2xl p-6 mb-8 border flex items-center gap-6" style={{ background: '#0a0a09', borderColor: '#0f0f0e' }}>
           <div className="flex -space-x-3">
-            <div className="w-14 h-14 rounded-full flex items-center justify-center border-2" style={{ background: '#030302', borderColor: '#0f0f0e' }}></div>
-            <div className="w-14 h-14 rounded-full flex items-center justify-center border-2" style={{ background: '#030302', borderColor: '#0f0f0e' }}></div>
-            <div className="w-14 h-14 rounded-full flex items-center justify-center border-2" style={{ background: '#030302', borderColor: '#0f0f0e' }}></div>
+            <div className="w-14 h-14 rounded-full flex items-center justify-center border-2 overflow-hidden relative" style={{ background: '#030302', borderColor: '#0f0f0e' }}>
+              <Image
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=56&h=56&fit=crop&crop=faces"
+                alt="Team member"
+                fill
+                className="object-cover"
+                sizes="56px"
+              />
+            </div>
+            <div className="w-14 h-14 rounded-full flex items-center justify-center border-2 overflow-hidden relative" style={{ background: '#030302', borderColor: '#0f0f0e' }}>
+              <Image
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=56&h=56&fit=crop&crop=faces"
+                alt="Team member"
+                fill
+                className="object-cover"
+                sizes="56px"
+              />
+            </div>
+            <div className="w-14 h-14 rounded-full flex items-center justify-center border-2 overflow-hidden relative" style={{ background: '#030302', borderColor: '#0f0f0e' }}>
+              <Image
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=56&h=56&fit=crop&crop=faces"
+                alt="Team member"
+                fill
+                className="object-cover"
+                sizes="56px"
+              />
+            </div>
           </div>
           <p style={{ color: '#EEF4ED' }}>
             Get a detailed plan from our team within 24 hours.

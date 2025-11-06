@@ -205,9 +205,33 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           <div className="bg-black/10 border border-white/6 rounded-2xl p-6 mb-6">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex -space-x-3">
-                <div className="w-14 h-14 rounded-xl border-2" style={{ background: '#030302', borderColor: '#0f0f0e' }}></div>
-                <div className="w-14 h-14 rounded-xl border-2" style={{ background: '#030302', borderColor: '#0f0f0e' }}></div>
-                <div className="w-14 h-14 rounded-xl border-2" style={{ background: '#030302', borderColor: '#0f0f0e' }}></div>
+                <div className="w-14 h-14 rounded-xl border-2 overflow-hidden relative" style={{ background: '#030302', borderColor: '#0f0f0e' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=56&h=56&fit=crop&crop=faces"
+                    alt="Team member"
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
+                </div>
+                <div className="w-14 h-14 rounded-xl border-2 overflow-hidden relative" style={{ background: '#030302', borderColor: '#0f0f0e' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=56&h=56&fit=crop&crop=faces"
+                    alt="Team member"
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
+                </div>
+                <div className="w-14 h-14 rounded-xl border-2 overflow-hidden relative" style={{ background: '#030302', borderColor: '#0f0f0e' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=56&h=56&fit=crop&crop=faces"
+                    alt="Team member"
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
+                </div>
               </div>
               <p className="text-sm" style={{ color: '#EEF4ED', opacity: 0.8 }}>
                 Get a detailed plan from our team within <span style={{ color: '#EEF4ED' }}>24 hours.</span>
