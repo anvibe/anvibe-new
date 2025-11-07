@@ -11,9 +11,10 @@ interface Gradient {
 
 interface RadialBackgroundProps {
   gradient?: Gradient
+  zIndex?: number
 }
 
-export default function RadialBackground({ gradient }: RadialBackgroundProps) {
+export default function RadialBackground({ gradient, zIndex = -1 }: RadialBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationFrameRef = useRef<number>()
 
@@ -129,7 +130,7 @@ export default function RadialBackground({ gradient }: RadialBackgroundProps) {
   }, [])
 
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>
+    <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex }}>
       {/* Background gradient layer with smooth fade transitions */}
       <AnimatePresence>
         <motion.div

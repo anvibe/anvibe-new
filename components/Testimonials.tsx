@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
+import RadialBackground from './RadialBackground'
 
 const techStack = [
   {
@@ -50,6 +51,32 @@ const techStack = [
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentGradient, setCurrentGradient] = useState(0)
+
+  const gradients = [
+    { color1: '#FF6B6B', color2: '#FF8E53', angle: 45 },
+    { color1: '#4ECDC4', color2: '#44A08D', angle: 135 },
+    { color1: '#A8E6CF', color2: '#FFD93D', angle: 225 },
+    { color1: '#6C5CE7', color2: '#A29BFE', angle: 315 },
+  ]
+
+  useEffect(() => {
+    // Start carousel after initial animation (wait 5 seconds)
+    let interval: NodeJS.Timeout | null = null
+    
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        setCurrentGradient((prev) => (prev + 1) % gradients.length)
+      }, 5000) // Change gradient every 5 seconds
+    }, 5000)
+
+    return () => {
+      clearTimeout(timeout)
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [gradients.length])
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % techStack.length)
@@ -102,16 +129,11 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl sm:rounded-2xl" style={{ border: '1px solid rgba(238, 244, 237, 0.1)' }} />
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-10 hidden lg:block">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 sm:p-4 max-w-full sm:max-w-sm">
-                <h4 className="font-semibold text-sm sm:text-base" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>{currentTech.name}</h4>
-                <div className="flex items-center gap-2 mt-1 sm:mt-2">
-                  <div className="w-px h-3 sm:h-4 bg-white/50"></div>
-                  <p className="text-xs sm:text-sm" style={{ color: '#EEF4ED', opacity: 0.8 }}>Tech Stack</p>
-                </div>
-              </div>
+            {/* Radial Background Canvas inside logo div - before gradient overlay */}
+            <div className="absolute inset-0 rounded-xl sm:rounded-2xl overflow-hidden" style={{ zIndex: 0 }}>
+              <RadialBackground gradient={gradients[currentGradient]} zIndex={0} />
             </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl sm:rounded-2xl" style={{ border: '1px solid rgba(238, 244, 237, 0.1)', zIndex: 1 }} />
           </div>
 
           {/* Description */}

@@ -33,7 +33,7 @@ export default function Footer() {
   }, [gradients.length])
 
   return (
-    <footer className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
+    <footer className="relative py-12 sm:py-16 md:py-24 overflow-hidden" style={{ zIndex: 10 }}>
       {/* Inverted Radial Background Canvas */}
       <RadialBackgroundInverted gradient={gradients[currentGradient]} />
 
@@ -45,7 +45,7 @@ export default function Footer() {
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 min-h-0">
         {/* Brand Logo */}
-        <div className="max-w-full sm:max-w-[504px] mb-8 sm:mb-12 md:mb-16">
+        <div className="max-w-full sm:max-w-[504px] mb-8 sm:mb-12 md:mb-16 relative">
           <div className="h-auto sm:h-[120px] md:h-[173px] flex items-center">
             <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-bold text-white boldonse-regular">
               Anvibe

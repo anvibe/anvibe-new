@@ -5,12 +5,16 @@ import ScrollAnimation from '@/components/ScrollAnimation'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import PageNav from '@/components/PageNav'
+import NoiseBackground from '@/components/NoiseBackground'
 
 export default async function BlogPage() {
   const posts = getBlogPosts()
 
   return (
-    <main className="min-h-screen" style={{ background: '#040403' }}>
+    <main className="min-h-screen relative" style={{ background: '#040403' }}>
+      {/* Noise Background Animation */}
+      <NoiseBackground />
+      
       {/* Navigation */}
       <PageNav />
 

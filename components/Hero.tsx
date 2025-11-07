@@ -18,10 +18,10 @@ export default function Hero() {
   const menuRef = useRef<HTMLDivElement>(null)
 
   const gradients = [
-    { color1: '#3060eb', color2: '#8f35ea', angle: 301 },
-    { color1: '#8f35ea', color2: '#E1A0FF', angle: 135 },
-    { color1: '#E1A0FF', color2: '#4BD760', angle: 45 },
-    { color1: '#4BD760', color2: '#3060eb', angle: 225 },
+    { color1: '#4C1D95', color2: '#6B21A8', angle: 301 },
+    { color1: '#581C87', color2: '#7C3AED', angle: 135 },
+    { color1: '#6B21A8', color2: '#9333EA', angle: 45 },
+    { color1: '#5B21B6', color2: '#7C3AED', angle: 225 },
   ]
 
   const carouselItems = [
@@ -112,6 +112,9 @@ export default function Hero() {
       >
         {/* Radial Background Canvas */}
         <RadialBackground gradient={gradients[currentGradient]} />
+
+        {/* Overlay on JavaScript animation */}
+        <div className="absolute inset-0 w-full h-full bg-black/20 pointer-events-none" style={{ zIndex: 0 }} />
 
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col p-4 sm:p-6 md:p-8 h-full">
@@ -251,11 +254,11 @@ export default function Hero() {
             >
               {/* Social Links */}
               <div className="flex items-center gap-3 sm:gap-5">
-                <a href="https://www.instagram.com/anvibe.xyz/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">IG</a>
+                <a href="https://www.instagram.com/anvibe.xyz/" target="_blank" rel="noopener noreferrer" className="text-2xl sm:text-xl text-white hover:text-white/80 transition-colors">IG</a>
                 <span className="text-white">/</span>
-                <a href="https://www.youtube.com/@Anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">YT</a>
+                <a href="https://www.youtube.com/@Anvibe25" target="_blank" rel="noopener noreferrer" className="text-2xl sm:text-xl text-white hover:text-white/80 transition-colors">YT</a>
                 <span className="text-white">/</span>
-                <a href="https://x.com/anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">X</a>
+                <a href="https://x.com/anvibe25" target="_blank" rel="noopener noreferrer" className="text-2xl sm:text-xl text-white hover:text-white/80 transition-colors">X</a>
               </div>
 
               {/* Text Carousel - Above Scramble */}
@@ -274,7 +277,7 @@ export default function Hero() {
                       style={{ backgroundColor: carouselItems[currentSlide].color }}
                     />
                     <span 
-                      className="text-lg sm:text-base md:text-lg font-semibold"
+                      className="text-2xl sm:text-xl md:text-2xl font-semibold"
                       style={{ color: carouselItems[currentSlide].color }}
                     >
                       {carouselItems[currentSlide].text}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import NoiseBackground from './NoiseBackground'
 
 export default function ClientWrapper({ children }: { children: React.ReactNode }) {
   const [isMounted, setIsMounted] = useState(false)
@@ -35,7 +36,9 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
   }
 
   return (
-    <div className="client-wrapper-content" style={{ opacity: isMounted ? 1 : 0 }}>
+    <div className="client-wrapper-content relative" style={{ opacity: isMounted ? 1 : 0 }}>
+      {/* Noise Background Animation - covers all sections except Hero and Footer */}
+      <NoiseBackground />
       {children}
     </div>
   )

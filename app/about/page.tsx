@@ -8,11 +8,41 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import RadialBackground from '@/components/RadialBackground'
+import NoiseBackground from '@/components/NoiseBackground'
 
 export default function AboutPage() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const [currentGradient, setCurrentGradient] = useState(0)
+
+  // Different color combinations for team member animations
+  const teamGradients = [
+    { color1: '#FF6B6B', color2: '#FF8E53', angle: 45 },
+    { color1: '#4ECDC4', color2: '#44A08D', angle: 135 },
+    { color1: '#A8E6CF', color2: '#FFD93D', angle: 225 },
+    { color1: '#6C5CE7', color2: '#A29BFE', angle: 315 },
+    { color1: '#FF9FF3', color2: '#F368E0', angle: 90 },
+    { color1: '#54A0FF', color2: '#5F27CD', angle: 180 },
+  ]
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null
+    
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        setCurrentGradient((prev) => (prev + 1) % teamGradients.length)
+      }, 5000)
+    }, 5000)
+
+    return () => {
+      clearTimeout(timeout)
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [teamGradients.length])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -43,7 +73,10 @@ export default function AboutPage() {
   }, [isMenuOpen])
 
   return (
-    <main className="min-h-screen" style={{ background: '#040403' }}>
+    <main className="min-h-screen relative" style={{ background: '#040403' }}>
+      {/* Noise Background Animation */}
+      <NoiseBackground />
+      
       {/* Navigation */}
       <nav ref={menuRef} className="fixed top-0 left-0 right-0 z-[9999] py-3 sm:py-4 px-4 sm:px-6 md:px-8">
         <div className="max-w-full mx-auto">
@@ -224,19 +257,19 @@ export default function AboutPage() {
       </section>
 
       {/* Creative Excellence Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-12 sm:pt-16">
+      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 md:pb-24 lg:pb-32 pt-12 sm:pt-16">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-2 items-start justify-center">
               {/* Text Card */}
               <ScrollAnimation direction="left" delay={0.1}>
-                <div className="bg-[#eef0f6] rounded-xl p-6 sm:p-8 flex flex-col justify-between w-full lg:w-[748px]">
+                <div className="rounded-xl p-6 sm:p-8 flex flex-col justify-between w-full lg:w-[748px]">
                   <div className="mb-6 sm:mb-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-tight sm:leading-[48px] md:leading-[64px] tracking-[-0.5px] sm:tracking-[-1.44px] mb-4 sm:mb-6" style={{ color: '#040403' }}>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-tight sm:leading-[48px] md:leading-[64px] tracking-[-0.5px] sm:tracking-[-1.44px] mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>
                       An obsession with creative<br className="hidden sm:block" />
                       <span className="sm:hidden"> </span>excellence.
                     </h2>
-                    <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[430px]" style={{ color: '#040403', opacity: 0.8 }}>
+                    <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[430px]" style={{ color: '#EEF4ED', opacity: 0.8 }}>
                       Over the years, Anvibe has been recognized for creative
                       excellence, standout strategy, and the kind of digital
                       experiences that leave a lasting mark.
@@ -263,7 +296,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16">
+      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             {/* Header */}
@@ -280,41 +313,49 @@ export default function AboutPage() {
             </ScrollAnimation>
 
             {/* Team Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-              {teamMembers.map((member, index) => (
-                <ScrollAnimation key={index} direction="up" delay={0.2 + index * 0.1}>
-                  <div className="bg-white rounded-lg sm:rounded-xl p-1.5 sm:p-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <div className="w-full sm:w-[150px] md:w-[200px] lg:w-[250px] h-[200px] sm:h-[150px] md:h-[200px] lg:h-[250px] relative rounded-lg overflow-hidden flex-shrink-0">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 150px, (max-width: 1024px) 200px, 250px"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-between flex-1 py-2 sm:py-4">
-                      <div>
-                        <h3 className="text-base sm:text-[17.7px] leading-[22px] sm:leading-[23.5px] tracking-[-0.1px] sm:tracking-[-0.181px] mb-1" style={{ color: '#040403', fontFamily: 'Inter, sans-serif' }}>
-                          {member.name}
-                        </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              {teamMembers.map((member, index) => {
+                const gradientIndex = (index + currentGradient) % teamGradients.length
+                return (
+                  <ScrollAnimation key={index} direction="up" delay={0.2 + index * 0.1}>
+                    <div className="relative rounded-lg sm:rounded-xl p-1.5 sm:p-2 flex flex-col sm:flex-row gap-3 sm:gap-4 overflow-hidden">
+                      {/* Radial Background Animation */}
+                      <div className="absolute inset-0 rounded-lg sm:rounded-xl overflow-hidden" style={{ zIndex: 0 }}>
+                        <RadialBackground gradient={teamGradients[gradientIndex]} zIndex={0} />
                       </div>
-                      <div>
-                        <p className="text-xs sm:text-[13.7px] leading-[16px] sm:leading-[19.71px]" style={{ color: '#040403', opacity: 0.8 }}>
-                          {member.role}
-                        </p>
+                      {/* Content */}
+                      <div className="relative z-10 w-full sm:w-[150px] md:w-[200px] lg:w-[250px] h-[200px] sm:h-[150px] md:h-[200px] lg:h-[250px] rounded-lg overflow-hidden flex-shrink-0">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 150px, (max-width: 1024px) 200px, 250px"
+                        />
+                      </div>
+                      <div className="relative z-10 flex flex-col justify-between flex-1 py-2 sm:py-4">
+                        <div>
+                          <h3 className="text-base sm:text-[17.7px] leading-[22px] sm:leading-[23.5px] tracking-[-0.1px] sm:tracking-[-0.181px] mb-1" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
+                            {member.name}
+                          </h3>
+                        </div>
+                        <div>
+                          <p className="text-xs sm:text-[13.7px] leading-[16px] sm:leading-[19.71px]" style={{ color: '#EEF4ED', opacity: 0.9 }}>
+                            {member.role}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </ScrollAnimation>
-              ))}
+                  </ScrollAnimation>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Awards Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16">
+      {/* Roadmap Section */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 items-start justify-center">
@@ -322,29 +363,29 @@ export default function AboutPage() {
               <ScrollAnimation direction="left" delay={0.1}>
                 <div className="flex flex-col gap-2 sm:gap-2.5 items-start max-w-full sm:max-w-[300px] px-4 sm:px-0">
                   <div className="bg-white box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]">
-                    <span className="text-sm sm:text-base" style={{ color: '#040403' }}>Awards</span>
+                    <span className="text-sm sm:text-base" style={{ color: '#040403' }}>Roadmap</span>
                   </div>
                   <h2 className="text-3xl sm:text-4xl md:text-[44.6px] font-bold leading-tight sm:leading-[48px] md:leading-[60px] tracking-[-0.5px] sm:tracking-[-1.44px]" style={{ color: '#EEF4ED' }}>
-                    Things we&apos;re<br className="hidden sm:block" />
-                    <span className="sm:hidden"> </span>proud of
+                    What&apos;s<br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>coming next
                   </h2>
                 </div>
               </ScrollAnimation>
 
-              {/* Awards List */}
+              {/* Roadmap List */}
               <div className="flex flex-col w-full lg:w-[1156px]">
-                {awards.map((award, index) => (
+                {roadmap.map((item, index) => (
                   <ScrollAnimation key={index} direction="right" delay={0.15 + index * 0.05}>
                     <div className="border-b flex flex-col sm:flex-row items-start sm:items-center justify-between py-4 sm:py-5 gap-2 sm:gap-4" style={{ borderColor: 'rgba(238, 244, 237, 0.2)' }}>
                       <h3 className="text-lg sm:text-xl md:text-[23.1px] font-bold leading-[24px] sm:leading-[28.8px] tracking-[-0.1px] sm:tracking-[-0.24px]" style={{ color: '#EEF4ED' }}>
-                        {award.name}
+                        {item.name}
                       </h3>
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 md:gap-10 items-start sm:items-center">
                         <span className="text-xs sm:text-sm md:text-[13.5px] leading-[16px] sm:leading-[19.71px]" style={{ color: '#EEF4ED', opacity: 0.9 }}>
-                          {award.category}
+                          {item.status}
                         </span>
                         <span className="text-xs sm:text-sm md:text-[14.1px] leading-[16px] sm:leading-[19.71px]" style={{ color: '#EEF4ED', opacity: 0.7 }}>
-                          {award.date}
+                          {item.releaseDate}
                         </span>
                       </div>
                     </div>
@@ -398,15 +439,15 @@ const teamMembers = [
   },
 ]
 
-const awards = [
-  { name: 'Awwwards', category: 'Site of the Day', date: 'Apr 2025' },
-  { name: 'CSS Design', category: 'Best UX, UI & Innovation', date: 'Mar 2025' },
-  { name: 'Webby', category: 'Best Visual Design', date: 'Oct 2024' },
-  { name: 'Framer', category: 'Best Portfolio Website', date: 'Aug 2024' },
-  { name: 'Figma', category: 'Creator of the Year', date: 'Jul 2024' },
-  { name: 'Creativepool', category: 'People\'s Choice Gold', date: 'May 2024' },
-  { name: 'Communication Arts', category: 'Web Excellence', date: 'Feb 2024' },
-  { name: 'Awwwards', category: 'Honorable Mention', date: 'Oct 2023' },
-  { name: 'Indigo', category: 'Gold for Branding', date: 'Nov 2023' },
-  { name: 'Clutch', category: 'Top Creative Agency', date: 'Sep 2023' },
+const roadmap = [
+  { name: 'VibeCoding Pro', status: 'In Development', releaseDate: 'Q2 2025' },
+  { name: 'AI Design Assistant', status: 'Beta Testing', releaseDate: 'Q1 2025' },
+  { name: 'Collaboration Platform', status: 'In Development', releaseDate: 'Q3 2025' },
+  { name: 'Mobile App Suite', status: 'Planning', releaseDate: 'Q4 2025' },
+  { name: 'API Integration Tools', status: 'In Development', releaseDate: 'Q2 2025' },
+  { name: 'Real-time Analytics Dashboard', status: 'Beta Testing', releaseDate: 'Q1 2025' },
+  { name: 'Advanced AI Models', status: 'Research', releaseDate: 'Q3 2025' },
+  { name: 'Enterprise Solutions', status: 'Planning', releaseDate: 'Q4 2025' },
+  { name: 'Developer Tools Package', status: 'In Development', releaseDate: 'Q2 2025' },
+  { name: 'Community Platform', status: 'Planning', releaseDate: 'Q1 2026' },
 ]

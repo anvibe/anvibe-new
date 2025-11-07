@@ -9,6 +9,7 @@ import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import PartnerLogos from '@/components/PartnerLogos'
+import NoiseBackground from '@/components/NoiseBackground'
 
 export default function VibecodingPage() {
   const pathname = usePathname()
@@ -44,7 +45,10 @@ export default function VibecodingPage() {
   }, [isMenuOpen])
 
   return (
-    <main className="min-h-screen" style={{ background: '#040403' }}>
+    <main className="min-h-screen relative" style={{ background: '#040403' }}>
+      {/* Noise Background Animation */}
+      <NoiseBackground />
+      
       {/* Navigation */}
       <nav ref={menuRef} className="fixed top-0 left-0 right-0 z-[9999] py-3 sm:py-4 px-4 sm:px-6 md:px-8">
         <div className="max-w-full mx-auto">
