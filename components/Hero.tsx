@@ -114,33 +114,31 @@ export default function Hero() {
         <RadialBackground gradient={gradients[currentGradient]} />
 
         {/* Content Overlay */}
-        <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 h-full">
-          {/* Top Section */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-1 lg:gap-8" style={{ paddingTop: '20px' }}>
-            {/* Logo and Menu Row */}
-            <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap">
-              {/* Brand Logo */}
-              <motion.div 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="flex-shrink-0 max-w-full sm:max-w-[477px]"
-              >
-                <div className="h-auto sm:h-[120px] md:h-[120px] lg:h-[164px] flex items-start">
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-bold text-white boldonse-regular">
-                    Anvibe
-                  </div>
+        <div className="relative z-10 flex flex-col p-4 sm:p-6 md:p-8 h-full">
+          {/* Top Section - Logo and Menu */}
+          <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap" style={{ paddingTop: '20px' }}>
+            {/* Brand Logo */}
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="flex-shrink-0 max-w-full sm:max-w-[477px]"
+            >
+              <div className="h-auto sm:h-[120px] md:h-[120px] lg:h-[164px] flex items-start">
+                <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-bold text-white boldonse-regular">
+                  Anvibe
                 </div>
-              </motion.div>
+              </div>
+            </motion.div>
 
-              {/* Menu Button */}
-              <motion.div 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                className="flex-shrink-0 relative flex items-start"
-                ref={menuRef}
-              >
+            {/* Menu Button */}
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              className="flex-shrink-0 relative flex items-start"
+              ref={menuRef}
+            >
                 <motion.button 
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -241,76 +239,72 @@ export default function Hero() {
                   )}
                 </AnimatePresence>
               </motion.div>
-            </div>
-
-            {/* Social Links */}
-            <motion.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-              className="flex items-center gap-3 sm:gap-5"
-            >
-              <a href="https://www.instagram.com/anvibe.xyz/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">IG</a>
-              <span className="text-white">/</span>
-              <a href="https://www.youtube.com/@Anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">YT</a>
-              <span className="text-white">/</span>
-              <a href="https://x.com/anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">X</a>
-            </motion.div>
           </div>
 
-          {/* Bottom Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            className="flex flex-col gap-4 sm:gap-6 w-full sm:max-w-[70%]"
-          >
-            {/* Text Carousel - Above Scramble */}
-            <div className="relative h-12 sm:h-14 md:h-16 flex items-center overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="flex items-center gap-3"
-                >
-                  <div 
-                    className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
-                    style={{ backgroundColor: carouselItems[currentSlide].color }}
-                  />
-                  <span 
-                    className="text-lg sm:text-base md:text-lg font-semibold"
-                    style={{ color: carouselItems[currentSlide].color }}
-                  >
-                    {carouselItems[currentSlide].text}
-                  </span>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          {/* Centered Content Section - Social, Animated Text, and Scrambled Text */}
+          <div className="flex-1 flex items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+              className="flex flex-col gap-4 sm:gap-6 w-full sm:max-w-[70%]"
+            >
+              {/* Social Links */}
+              <div className="flex items-center gap-3 sm:gap-5">
+                <a href="https://www.instagram.com/anvibe.xyz/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">IG</a>
+                <span className="text-white">/</span>
+                <a href="https://www.youtube.com/@Anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">YT</a>
+                <span className="text-white">/</span>
+                <a href="https://x.com/anvibe25" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white hover:text-white/80 transition-colors">X</a>
+              </div>
 
-            {/* Tagline Text */}
-            <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile || isTablet ? '1.4' : '0.8' }}>
-              {isMobile || isTablet ? (
-                <span style={{ display: 'block', wordBreak: 'normal', overflowWrap: 'break-word', hyphens: 'auto' }}>
-                  We are VibeCoders, crafting interactive experiences with next-gen AI tools and LLM-driven engines. Our work bridges design, intelligence, and emotion.
-                </span>
-              ) : (
-                <TextScramble 
-                  texts={[
-                    "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
-                    "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
-                  ]}
-                  speed={10}
-                  delay={1000}
-                  holdDuration={4000}
-                  lineGap="0"
-                  className="inline"
-                />
-              )}
-            </p>
-          </motion.div>
+              {/* Text Carousel - Above Scramble */}
+              <div className="relative h-12 sm:h-14 md:h-16 flex items-center overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div 
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
+                      style={{ backgroundColor: carouselItems[currentSlide].color }}
+                    />
+                    <span 
+                      className="text-lg sm:text-base md:text-lg font-semibold"
+                      style={{ color: carouselItems[currentSlide].color }}
+                    >
+                      {carouselItems[currentSlide].text}
+                    </span>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Tagline Text */}
+              <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile || isTablet ? '1.4' : '0.8' }}>
+                {isMobile || isTablet ? (
+                  <span style={{ display: 'block', wordBreak: 'normal', overflowWrap: 'break-word', hyphens: 'auto' }}>
+                    We are VibeCoders, crafting interactive experiences with next-gen AI tools and LLM-driven engines. Our work bridges design, intelligence, and emotion.
+                  </span>
+                ) : (
+                  <TextScramble 
+                    texts={[
+                      "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
+                      "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
+                    ]}
+                    speed={10}
+                    delay={1000}
+                    holdDuration={4000}
+                    lineGap="0"
+                    className="inline"
+                  />
+                )}
+              </p>
+            </motion.div>
+          </div>
 
           {/* Let&apos;s Start Button - At bottom right with padding */}
           <motion.div 

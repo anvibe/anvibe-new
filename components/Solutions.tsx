@@ -92,7 +92,6 @@ export default function Solutions() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
                   Services
                 </h2>
-                <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(7)</span>
               </div>
               <p className="text-lg sm:text-xl md:text-2xl font-normal" style={{ color: '#EEF4ED', opacity: 0.7 }}>
                 what we offer
