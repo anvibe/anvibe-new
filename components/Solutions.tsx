@@ -36,6 +36,18 @@ const solutions = [
     description: 'Bring ideas to life with high-impact 3D visuals and motion.',
     dotColor: '#E28F2F', // Orange
   },
+  {
+    number: '06',
+    title: 'App design',
+    description: 'Intuitive and engaging mobile and web app experiences that users love.',
+    dotColor: '#3060eb', // Blue
+  },
+  {
+    number: '07',
+    title: 'Figma plugins',
+    description: 'Custom plugins and tools to supercharge your Figma workflow and productivity.',
+    dotColor: '#8f35ea', // Purple
+  },
 ]
 
 export default function Solutions() {
@@ -79,7 +91,7 @@ export default function Solutions() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
                 Solutions
               </h2>
-              <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(5)</span>
+              <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(7)</span>
             </div>
             <a 
               href="#contact"
