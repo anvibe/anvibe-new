@@ -116,7 +116,7 @@ export default function Hero() {
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col p-4 sm:p-6 md:p-8 h-full">
           {/* Top Section - Logo and Menu */}
-          <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap" style={{ paddingTop: '20px' }}>
+          <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap relative z-[9999]" style={{ paddingTop: '20px' }}>
             {/* Brand Logo */}
             <motion.div 
               initial={{ opacity: 0, y: -20 }}
@@ -136,7 +136,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              className="flex-shrink-0 relative flex items-start"
+              className="flex-shrink-0 relative flex items-start z-[9999]"
               ref={menuRef}
             >
                 <motion.button 
@@ -144,7 +144,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="flex flex-col gap-[9px] h-10 items-end justify-start w-12 sm:w-16 relative z-50"
+                  className="flex flex-col gap-[9px] h-10 items-end justify-start w-12 sm:w-16 relative z-[9999]"
                   aria-label="Toggle menu"
                 >
                   <div className="relative w-12 sm:w-16 h-[18px] flex items-center justify-end">
@@ -173,8 +173,8 @@ export default function Hero() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute top-full right-0 mt-4 bg-black/95 backdrop-blur-md border border-white/10 shadow-lg overflow-hidden rounded-lg min-w-[180px] sm:min-w-[200px]"
-                    >
+                  className="absolute top-full right-0 mt-4 bg-black/95 backdrop-blur-md border border-white/10 shadow-lg overflow-hidden rounded-lg min-w-[180px] sm:min-w-[200px] z-[9999]"
+                >
                       <div className="px-4 sm:px-6 py-6 sm:py-8">
                         <div className="flex flex-col gap-4 sm:gap-6">
                           {[
@@ -242,7 +242,7 @@ export default function Hero() {
           </div>
 
           {/* Centered Content Section - Social, Animated Text, and Scrambled Text */}
-          <div className="flex-1 flex items-center">
+          <div className="flex-1 flex items-center relative z-0">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

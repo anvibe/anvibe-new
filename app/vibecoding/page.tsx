@@ -46,7 +46,7 @@ export default function VibecodingPage() {
   return (
     <main className="min-h-screen" style={{ background: '#040403' }}>
       {/* Navigation */}
-      <nav ref={menuRef} className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 md:px-8">
+      <nav ref={menuRef} className="fixed top-0 left-0 right-0 z-[9999] py-3 sm:py-4 px-4 sm:px-6 md:px-8">
         <div className="max-w-full mx-auto">
           <div className="flex items-center justify-between h-10 sm:h-12">
             <motion.div
@@ -93,8 +93,8 @@ export default function VibecodingPage() {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute top-full right-0 mt-4 bg-black/95 backdrop-blur-md border border-white/10 shadow-lg overflow-hidden rounded-lg min-w-[180px] sm:min-w-[200px]"
-                  >
+                      className="absolute top-full right-0 mt-4 bg-black/95 backdrop-blur-md border border-white/10 shadow-lg overflow-hidden rounded-lg min-w-[180px] sm:min-w-[200px] z-[9999]"
+                    >
                     <div className="px-4 sm:px-6 py-6 sm:py-8">
                       <div className="flex flex-col gap-4 sm:gap-6">
                         {[
