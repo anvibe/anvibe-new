@@ -112,7 +112,7 @@ export default function Hero() {
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 h-full">
           {/* Top Section */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8" style={{ paddingTop: '20px' }}>
+          <div className="flex flex-col gap-4 sm:gap-6 md:gap-4 lg:gap-8" style={{ paddingTop: '20px' }}>
             {/* Logo and Menu Row */}
             <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap">
               {/* Brand Logo */}

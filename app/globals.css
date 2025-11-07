@@ -1,8 +1,19 @@
-@import url('https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Local Font Face Declarations for Clash Display - Semibold (600) */
+@font-face {
+  font-family: 'Clash Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+       url('/fonts/ClashDisplay-Semibold.woff') format('woff');
+}
+
+/* Fallback imports for fonts */
+@import url('https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&display=swap');
 
 :root {
   --background: #ffffff;
