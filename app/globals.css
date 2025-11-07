@@ -1,3 +1,5 @@
+@import url('https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,9 +21,10 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Archivo', sans-serif !important;
   margin: 0;
   padding: 0;
+  font-display: swap;
   /* Improve scroll performance */
   overscroll-behavior: none;
   /* Smooth font rendering during scroll */
@@ -111,17 +114,19 @@ main > section:first-child {
 
 /* Clash Display Font */
 .boldonse-regular {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Clash Display', 'ClashDisplay', sans-serif !important;
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Apply Clash Display to all headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Clash Display', 'ClashDisplay', sans-serif !important;
   font-weight: 600;
   font-style: normal;
   line-height: 1.8;
+  font-display: swap;
 }
 
 /* Force text color for dark sections */
