@@ -3,7 +3,11 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
-export default function PartnerLogos() {
+interface PartnerLogosProps {
+  withGradient?: boolean
+}
+
+export default function PartnerLogos({ withGradient = false }: PartnerLogosProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -57,8 +61,14 @@ export default function PartnerLogos() {
   }
 
   return (
-    <section className="py-6 sm:py-8 overflow-hidden" style={{ background: '#0a0a09' }}>
-      <div className="relative">
+    <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
+      <div className="max-w-[1520px] mx-auto">
+        <div className="rounded-xl sm:rounded-2xl overflow-hidden" style={{ 
+          background: withGradient 
+            ? 'linear-gradient(135deg, rgba(48, 96, 235, 0.1) 0%, rgba(143, 53, 234, 0.1) 100%)'
+            : '#0a0a09'
+        }}>
+          <div className="relative py-6 sm:py-8">
         <div 
           ref={containerRef}
           className="flex gap-8 sm:gap-12 md:gap-16 items-center"
@@ -96,6 +106,8 @@ export default function PartnerLogos() {
               </div>
             )
           })}
+        </div>
+          </div>
         </div>
       </div>
     </section>

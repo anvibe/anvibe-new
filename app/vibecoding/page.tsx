@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import PartnerLogos from '@/components/PartnerLogos'
 
 export default function VibecodingPage() {
   const pathname = usePathname()
@@ -159,8 +160,7 @@ export default function VibecodingPage() {
 
       {/* Hero Section */}
       <section className="pt-24 sm:pt-32 md:pt-[144px] pb-6 sm:pb-8 px-4 sm:px-6 md:px-8 lg:px-[200px]">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             {/* Header */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -188,82 +188,34 @@ export default function VibecodingPage() {
                 </p>
               </div>
             </motion.div>
-          </div>
         </div>
       </section>
 
       {/* Logo Showcase Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
-            <ScrollAnimation direction="up" delay={0.1}>
-              <div className="rounded-lg sm:rounded-xl p-6 sm:p-8 md:p-12 border-2" style={{ 
-                background: 'linear-gradient(135deg, rgba(48, 96, 235, 0.1) 0%, rgba(143, 53, 234, 0.1) 100%)',
-                borderColor: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)'
-              }}>
-                <p className="text-center text-sm sm:text-base mb-6 sm:mb-8" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                  Powered by the world&apos;s leading AI tools and platforms
-                </p>
-                <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
-                  {[
-                    { name: 'Cursor', src: '/images/logos/cursor.svg', alt: 'Cursor' },
-                    { name: 'Claude', src: '/images/logos/claude.svg', alt: 'Claude AI' },
-                    { name: 'ChatGPT', src: '/images/logos/chatgpt.svg', alt: 'ChatGPT' },
-                    { name: 'Anthropic', src: '/images/logos/anthopic.svg', alt: 'Anthropic' },
-                    { name: 'Google Gemini', src: '/images/logos/Google-gemini-icon 1.svg', alt: 'Google Gemini' },
-                    { name: 'Figma', src: '/images/logos/figma.svg', alt: 'Figma' },
-                    { name: 'Vercel', src: '/images/logos/vercel.svg', alt: 'Vercel' },
-                    { name: 'Supabase', src: '/images/logos/supabase.svg', alt: 'Supabase' }
-                  ].map((logo, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1, duration: 0.4 }}
-                      className="flex items-center justify-center h-12 sm:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity"
-                    >
-                      <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        width={80}
-                        height={48}
-                        className="object-contain max-h-12 sm:max-h-16 w-auto filter brightness-0 invert"
-                        style={{ filter: 'brightness(0) invert(1)' }}
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </ScrollAnimation>
-          </div>
-        </div>
+      <section className="pb-12 sm:pb-16 pt-8 sm:pt-12">
+        <PartnerLogos withGradient={true} />
       </section>
 
       {/* The Vibecoding Philosophy */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-12 sm:pt-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
-            <ScrollAnimation direction="up" delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold mb-6 sm:mb-8 md:mb-10 leading-relaxed sm:!leading-[1.3] md:!leading-[1.4]" style={{ color: '#EEF4ED' }}>
-                The Vibecoding Philosophy
-              </h2>
-              <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-6 sm:mb-8" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                Vibecoding represents a paradigm shift from traditional coding to AI-enhanced development. It&apos;s about finding your flow state with AI code editors, where ideas transform into code at the speed of thought.
-              </p>
-              <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-8 sm:mb-10" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                Vibe coders don&apos;t just write code—they orchestrate AI tools to bring their creative visions to life, focusing on innovation rather than syntax.
-              </p>
-            </ScrollAnimation>
-          </div>
+        <div className="max-w-[1520px] mx-auto">
+          <ScrollAnimation direction="up" delay={0.1}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold mb-6 sm:mb-8 md:mb-10 leading-relaxed sm:!leading-[1.3] md:!leading-[1.4]" style={{ color: '#EEF4ED' }}>
+              The Vibecoding Philosophy
+            </h2>
+            <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-6 sm:mb-8" style={{ color: '#EEF4ED', opacity: 0.8 }}>
+              Vibecoding represents a paradigm shift from traditional coding to AI-enhanced development. It&apos;s about finding your flow state with AI code editors, where ideas transform into code at the speed of thought.
+            </p>
+            <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-8 sm:mb-10" style={{ color: '#EEF4ED', opacity: 0.8 }}>
+              Vibe coders don&apos;t just write code—they orchestrate AI tools to bring their creative visions to life, focusing on innovation rather than syntax.
+            </p>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* Core Principles */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
@@ -318,14 +270,12 @@ export default function VibecodingPage() {
                 )
               })}
             </div>
-          </div>
         </div>
       </section>
 
       {/* Comparison Section */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4 sm:px-0">
@@ -397,14 +347,12 @@ export default function VibecodingPage() {
                 </div>
               </ScrollAnimation>
             </div>
-          </div>
         </div>
       </section>
 
       {/* Popular Tools */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
@@ -453,14 +401,12 @@ export default function VibecodingPage() {
                 </ScrollAnimation>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
       {/* Key Benefits */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4 sm:px-0">
                 <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #4BD760 0%, #3060eb 100%)' }}>
@@ -526,14 +472,12 @@ export default function VibecodingPage() {
                 </ScrollAnimation>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
       {/* Real-World Use Cases */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
                 <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #E28F2F 0%, #FD5C5C 100%)' }}>
@@ -588,14 +532,12 @@ export default function VibecodingPage() {
                 )
               })}
             </div>
-          </div>
         </div>
       </section>
 
       {/* Statistics Section */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="rounded-lg sm:rounded-xl p-6 sm:p-8 md:p-12 border-2 hero-gradient" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
@@ -617,14 +559,12 @@ export default function VibecodingPage() {
                 </div>
               </div>
             </ScrollAnimation>
-          </div>
         </div>
       </section>
 
       {/* Getting Started */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4 sm:px-0">
                 <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #3060eb 0%, #E1A0FF 100%)' }}>
@@ -683,14 +623,12 @@ export default function VibecodingPage() {
                 )
               })}
             </div>
-          </div>
         </div>
       </section>
 
       {/* Resources & Learning */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
                 <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #4BD760 0%, #7EA6F0 100%)' }}>
@@ -755,14 +693,12 @@ export default function VibecodingPage() {
                 )
               })}
             </div>
-          </div>
         </div>
       </section>
 
       {/* Call to Action */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="rounded-lg sm:rounded-xl p-8 sm:p-12 md:p-16 text-center border-2 hero-gradient" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold mb-4 sm:mb-6 leading-relaxed sm:!leading-[1.3] md:!leading-[1.4]" style={{ color: '#FFFFFF' }}>
@@ -787,7 +723,6 @@ export default function VibecodingPage() {
                 </div>
               </div>
             </ScrollAnimation>
-          </div>
         </div>
       </section>
 

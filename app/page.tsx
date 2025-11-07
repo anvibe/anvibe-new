@@ -18,10 +18,10 @@ export default async function Home() {
     <main className="min-h-screen">
       <Hero />
       <ClientWrapper>
-        <PartnerLogos />
         <WeDesignSection />
-        <Projects />
         <StorySection />
+        <PartnerLogos />
+        <Projects />
         <Solutions />
         <Testimonials />
         {/* <Stats /> */}

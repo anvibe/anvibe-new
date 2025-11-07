@@ -5,8 +5,8 @@ import { getProjectBySlug, getAllProjectSlugs, getProjects } from '@/lib/content
 import { ExternalLink } from 'lucide-react'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
-import ProjectNav from '@/components/ProjectNav'
 import TextScramble from '@/components/TextScramble'
+import ProjectHeader from '@/components/ProjectHeader'
 
 export async function generateStaticParams() {
   const slugs = getAllProjectSlugs()
@@ -42,7 +42,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
   return (
     <main className="min-h-screen" style={{ background: '#040403' }}>
       {/* Navigation */}
-      <ProjectNav />
+      <ProjectHeader />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 sm:px-8">

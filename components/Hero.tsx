@@ -263,58 +263,62 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-start sm:items-end justify-between relative gap-4 sm:gap-0"
+            className="flex flex-col gap-4 sm:gap-6 w-full sm:max-w-[70%]"
           >
-            {/* Tagline Text Container */}
-            <div className="flex flex-col gap-4 sm:gap-6 w-full sm:max-w-[70%]">
-              {/* Text Carousel - Above Scramble */}
-              <div className="relative h-12 sm:h-14 md:h-16 flex items-center overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex items-center gap-3"
-                  >
-                    <div 
-                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
-                      style={{ backgroundColor: carouselItems[currentSlide].color }}
-                    />
-                    <span 
-                      className="text-lg sm:text-base md:text-lg font-semibold"
-                      style={{ color: carouselItems[currentSlide].color }}
-                    >
-                      {carouselItems[currentSlide].text}
-                    </span>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Tagline Text */}
-              <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile || isTablet ? '1.4' : '0.8' }}>
-                {isMobile || isTablet ? (
-                  <span style={{ display: 'block', wordBreak: 'normal', overflowWrap: 'break-word', hyphens: 'auto' }}>
-                    We are VibeCoders, crafting interactive experiences with next-gen AI tools and LLM-driven engines. Our work bridges design, intelligence, and emotion.
-                  </span>
-                ) : (
-                  <TextScramble 
-                    texts={[
-                      "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
-                      "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
-                    ]}
-                    speed={10}
-                    delay={1000}
-                    holdDuration={4000}
-                    lineGap="0"
-                    className="inline"
+            {/* Text Carousel - Above Scramble */}
+            <div className="relative h-12 sm:h-14 md:h-16 flex items-center overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="flex items-center gap-3"
+                >
+                  <div 
+                    className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
+                    style={{ backgroundColor: carouselItems[currentSlide].color }}
                   />
-                )}
-              </p>
+                  <span 
+                    className="text-lg sm:text-base md:text-lg font-semibold"
+                    style={{ color: carouselItems[currentSlide].color }}
+                  >
+                    {carouselItems[currentSlide].text}
+                  </span>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
-            {/* Let&apos;s Start Button */}
+            {/* Tagline Text */}
+            <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile || isTablet ? '1.4' : '0.8' }}>
+              {isMobile || isTablet ? (
+                <span style={{ display: 'block', wordBreak: 'normal', overflowWrap: 'break-word', hyphens: 'auto' }}>
+                  We are VibeCoders, crafting interactive experiences with next-gen AI tools and LLM-driven engines. Our work bridges design, intelligence, and emotion.
+                </span>
+              ) : (
+                <TextScramble 
+                  texts={[
+                    "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
+                    "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
+                  ]}
+                  speed={10}
+                  delay={1000}
+                  holdDuration={4000}
+                  lineGap="0"
+                  className="inline"
+                />
+              )}
+            </p>
+          </motion.div>
+
+          {/* Let&apos;s Start Button - At bottom right with padding */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+            className="mt-auto pb-4 sm:pb-6 md:pb-8 flex justify-end"
+          >
             <a 
               href="#we-design"
               onClick={(e) => {
@@ -324,7 +328,7 @@ export default function Hero() {
                   weDesignSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }
               }}
-              className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group" 
+              className="inline-flex items-center gap-3 sm:gap-4 bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl hover:bg-white/90 transition-colors group" 
               style={{ color: '#000000' }}
             >
               <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s start</span>

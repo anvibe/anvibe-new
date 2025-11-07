@@ -12,17 +12,7 @@ export default function StorySection() {
     <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
       <div className="max-w-[1520px] mx-auto">
         <ScrollAnimation direction="up" delay={0.1}>
-          <div className="mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px] mb-2 sm:mb-4" style={{ color: '#EEF4ED' }}>
-              Our Reel
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl font-normal" style={{ color: '#EEF4ED', opacity: 0.7 }}>
-              watch us work
-            </p>
-          </div>
-        </ScrollAnimation>
-        <ScrollAnimation direction="up" delay={0.2}>
-          <div className="relative rounded-xl md:rounded-2xl overflow-hidden aspect-video" style={{ background: '#030302' }}>
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-video" style={{ background: '#030302' }}>
             {/* YouTube Video Embed */}
             {isVideoPlaying ? (
               <>
