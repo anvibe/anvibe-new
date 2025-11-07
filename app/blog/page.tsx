@@ -15,9 +15,8 @@ export default async function BlogPage() {
       <PageNav />
 
       {/* Header */}
-      <section className="pt-32 pb-20 px-6 sm:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-[1520px] mx-auto">
+      <section className="pt-32 pb-20 px-4 sm:px-6 md:px-8 lg:px-[200px]">
+        <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="mb-16">
                 <h1 className="text-5xl md:text-6xl font-bold mb-8" style={{ color: '#EEF4ED' }}>
@@ -79,7 +78,6 @@ export default async function BlogPage() {
                 ))}
               </div>
             )}
-          </div>
         </div>
       </section>
 

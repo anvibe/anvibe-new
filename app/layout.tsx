@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CustomCursor from '@/components/CustomCursor'
 
 export const metadata: Metadata = {
   title: 'Anvibe - Creative Agency',
@@ -39,6 +40,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         {children}
+        <CustomCursor />
         <script dangerouslySetInnerHTML={{
           __html: `
             // Mark body as ready after Hero should be rendered

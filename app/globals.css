@@ -264,3 +264,86 @@ section[style*="background:'#040403'"] textarea::placeholder {
   opacity: 0.8;
 }
 
+/* Custom Cursor Styles */
+/* hide OS cursor only while component is mounted */
+.custom-cursor-enabled {
+  cursor: none;
+}
+
+/* show sensible cursors for form fields even when hidden globally */
+.custom-cursor-enabled input,
+.custom-cursor-enabled textarea {
+  cursor: text;
+}
+
+.custom-cursor-enabled a,
+.custom-cursor-enabled button,
+.custom-cursor-enabled [role="button"] {
+  cursor: pointer;
+}
+
+/* base cursor bits */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-100px, -100px, 0); /* offscreen initial */
+  will-change: transform, opacity;
+}
+
+/* tiny center dot */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;  /* center on pointer */
+  margin-top: -3px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+/* outer ring */
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  margin-left: -15px; /* center on pointer */
+  margin-top: -15px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 120ms ease, transform 80ms ease, width 200ms ease, height 200ms ease, margin 200ms ease, background 200ms ease;
+  opacity: 1;
+}
+
+/* cursor hover state - bigger when over clickable elements */
+.cursor-ring.cursor-hovering {
+  width: 45px;
+  height: 45px;
+  margin-left: -22.5px;
+  margin-top: -22.5px;
+  border-width: 2.5px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+.cursor-dot.cursor-hovering {
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  margin-top: -4.5px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* accessibility: reduce motion -> keep it simple */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring { transition: none; }
+  .cursor-ring.cursor-hovering { transition: none; }
+}
+

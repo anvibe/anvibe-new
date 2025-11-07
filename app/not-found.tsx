@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
@@ -8,6 +9,7 @@ import Footer from '@/components/Footer'
 import RadialBackground from '@/components/RadialBackground'
 
 export default function NotFound() {
+  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -103,32 +105,37 @@ export default function NotFound() {
                           { href: '/vibecoding', label: 'Vibecoding' },
                           { href: '/blog', label: 'Blog' },
                           { href: '#contact', label: 'Contact' },
-                        ].map((item, index) => (
-                          <motion.div
-                            key={item.href}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1, duration: 0.3 }}
-                          >
-                            <Link 
-                              href={item.href}
-                              onClick={() => {
-                                setIsMenuOpen(false)
-                                if (item.href === '#contact') {
-                                  setTimeout(() => {
-                                    const contactSection = document.getElementById('contact')
-                                    if (contactSection) {
-                                      contactSection.scrollIntoView({ behavior: 'smooth' })
-                                    }
-                                  }, 100)
-                                }
-                              }}
-                              className="text-lg sm:text-xl font-medium text-white hover:text-white/80 transition-colors"
+                        ].map((item, index) => {
+                          const isActive = item.href === '/' 
+                            ? pathname === '/' 
+                            : pathname.startsWith(item.href.replace('#', ''))
+                          return (
+                            <motion.div
+                              key={item.href}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1, duration: 0.3 }}
                             >
-                              {item.label}
-                            </Link>
-                          </motion.div>
-                        ))}
+                              <Link 
+                                href={item.href}
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  if (item.href === '#contact') {
+                                    setTimeout(() => {
+                                      const contactSection = document.getElementById('contact')
+                                      if (contactSection) {
+                                        contactSection.scrollIntoView({ behavior: 'smooth' })
+                                      }
+                                    }, 100)
+                                  }
+                                }}
+                                className={`text-lg sm:text-xl text-white hover:text-white/80 transition-colors ${isActive ? 'font-bold' : 'font-medium'}`}
+                              >
+                                {item.label}
+                              </Link>
+                            </motion.div>
+                          )
+                        })}
                         <motion.div
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}

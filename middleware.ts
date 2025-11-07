@@ -9,8 +9,8 @@ export function middleware(request: NextRequest) {
     default-src 'self';
     script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://ogs.google.com https://www.google.com https://www.gstatic.com https://*.google.com;
     script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' blob: https://ogs.google.com https://www.google.com https://www.gstatic.com https://*.google.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com;
+    font-src 'self' https://fonts.gstatic.com https://api.fontshare.com https://fonts.fontshare.com;
     img-src 'self' blob: data: https:;
     connect-src 'self' https: blob:;
     frame-src 'self' https:;
