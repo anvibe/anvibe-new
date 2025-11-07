@@ -313,9 +313,9 @@ section[style*="background:'#040403'"] textarea::placeholder {
   margin-top: -15px;
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background: transparent;
+  backdrop-filter: blur(1px) saturate(180%);
+  -webkit-backdrop-filter: blur(1px) saturate(180%);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   transition: opacity 120ms ease, transform 80ms ease, width 200ms ease, height 200ms ease, margin 200ms ease, background 200ms ease;
   opacity: 1;
@@ -328,9 +328,9 @@ section[style*="background:'#040403'"] textarea::placeholder {
   margin-left: -22.5px;
   margin-top: -22.5px;
   border-width: 2.5px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: transparent;
+  backdrop-filter: blur(1px) saturate(180%);
+  -webkit-backdrop-filter: blur(1px) saturate(180%);
 }
 
 .cursor-dot.cursor-hovering {
