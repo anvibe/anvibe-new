@@ -19,7 +19,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', sans-serif;
   margin: 0;
   padding: 0;
   /* Improve scroll performance */
@@ -109,17 +109,17 @@ main > section:first-child {
   100% { background-position: 0% 7%; }
 }
 
-/* Boldonse Font */
+/* Clash Display Font */
 .boldonse-regular {
-  font-family: "Boldonse", system-ui;
-  font-weight: 400;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
   font-style: normal;
 }
 
-/* Apply Boldonse to all headings */
+/* Apply Clash Display to all headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Boldonse", system-ui;
-  font-weight: 400;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
   font-style: normal;
   line-height: 1.8;
 }

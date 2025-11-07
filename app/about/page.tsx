@@ -51,7 +51,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Link href="/" className="text-xl sm:text-2xl font-bold boldonse-regular text-white">Anvibe</Link>
+              <Link href="/" className="font-bold boldonse-regular text-white" style={{ fontSize: '2rem' }}>Anvibe</Link>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: -20 }}
@@ -167,7 +167,7 @@ export default function AboutPage() {
               </div>
 
               {/* Heading */}
-              <div className="flex flex-col items-center text-center max-w-full gap-4 sm:gap-6 md:gap-8 px-4">
+              <div className="flex flex-col items-center text-center max-w-full gap-4 sm:gap-6 md:gap-8 px-4" style={{ gap: '0.3rem' }}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED' }}>
                   We help brands grow with design
                 </h1>

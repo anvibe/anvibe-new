@@ -1,8 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import RadialBackgroundInverted from './RadialBackgroundInverted'
 
 export default function Footer() {
@@ -49,14 +47,14 @@ export default function Footer() {
         {/* Brand Logo */}
         <div className="max-w-full sm:max-w-[504px] mb-8 sm:mb-12 md:mb-16">
           <div className="h-auto sm:h-[120px] md:h-[173px] flex items-center">
-            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white boldonse-regular">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-bold text-white boldonse-regular">
               Anvibe
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between relative gap-8 sm:gap-0">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end relative gap-8 sm:gap-0">
           {/* Left Navigation */}
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-12 items-start sm:items-end opacity-80 w-full sm:w-auto">
             {/* Navigation Links - Horizontal on mobile */}
@@ -84,23 +82,6 @@ export default function Footer() {
               <p className="text-sm sm:text-base text-white">© 2026 Anvibe®</p>
             </div>
           </div>
-
-          {/* Let's Talk Button */}
-          <a 
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault()
-              const contactSection = document.getElementById('contact')
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' })
-              }
-            }}
-            className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group mt-6 sm:mt-0" 
-            style={{ color: '#000000' }}
-          >
-            <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s Talk</span>
-            <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" style={{ color: '#000000' }} />
-          </a>
         </div>
       </div>
     </footer>

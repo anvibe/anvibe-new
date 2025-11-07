@@ -53,7 +53,7 @@ export default function NotFound() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Link href="/" className="text-xl sm:text-2xl font-bold boldonse-regular text-white">Anvibe</Link>
+              <Link href="/" className="font-bold boldonse-regular text-white" style={{ fontSize: '2rem' }}>Anvibe</Link>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: -20 }}

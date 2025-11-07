@@ -96,9 +96,8 @@ export default function Hero() {
   return (
     <>
       <section 
-        className="relative overflow-hidden" 
+        className="relative overflow-hidden h-screen" 
         style={{ 
-          height: '100dvh', // Use dynamic viewport height for mobile
           minHeight: '100dvh',
           position: 'relative',
           zIndex: 100,
@@ -111,7 +110,7 @@ export default function Hero() {
         <RadialBackground gradient={gradients[currentGradient]} />
 
         {/* Content Overlay */}
-        <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8" style={{ height: '100%', minHeight: '100dvh' }}>
+        <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 h-full">
           {/* Top Section */}
           <div className="flex flex-col gap-4 sm:gap-6 md:gap-8" style={{ paddingTop: '20px' }}>
             {/* Logo and Menu Row */}
@@ -124,7 +123,7 @@ export default function Hero() {
                 className="flex-shrink-0 max-w-full sm:max-w-[477px]"
               >
                 <div className="h-auto sm:h-[120px] md:h-[164px] flex items-start">
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white boldonse-regular">
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-bold text-white boldonse-regular">
                     Anvibe
                   </div>
                 </div>
