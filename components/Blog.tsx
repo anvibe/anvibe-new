@@ -20,7 +20,7 @@ export default function Blog() {
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="flex flex-col md:flex-row justify-between items-start mb-8 sm:mb-12 md:mb-16 gap-6">
             <div className="mb-4 sm:mb-8 md:mb-0">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8" style={{ color: '#EEF4ED' }}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
                 Latest Insights & Updates
               </h2>
               <p className="text-lg sm:text-xl max-w-md mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>

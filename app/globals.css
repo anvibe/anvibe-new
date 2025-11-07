@@ -347,3 +347,13 @@ section[style*="background:'#040403'"] textarea::placeholder {
   .cursor-ring.cursor-hovering { transition: none; }
 }
 
+/* Rotate animation for scroll indicator */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

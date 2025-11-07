@@ -26,7 +26,7 @@ const pricingPlans = [
     priceRange: '$2,500',
     period: '/mo',
     description: 'Best choice for landing pages',
-    features: ['Webflow Development'],
+    features: ['Cursor AI Development'],
     cta: 'Get in touch',
     featured: false,
   },
@@ -42,7 +42,10 @@ export default function Pricing() {
             <div className="inline-block rounded-full px-4 sm:px-6 py-1.5 sm:py-2 mb-4 sm:mb-6" style={{ background: '#0a0a09' }}>
               <span className="text-xs sm:text-sm font-medium" style={{ color: '#EEF4ED' }}>Pricing</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold" style={{ color: '#EEF4ED' }}>Plans with purpose</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px] mb-2 sm:mb-4" style={{ color: '#EEF4ED' }}>Plans with purpose</h2>
+            <p className="text-lg sm:text-xl md:text-2xl font-normal" style={{ color: '#EEF4ED', opacity: 0.7 }}>
+              choose your plan
+            </p>
           </div>
         </ScrollAnimation>
 

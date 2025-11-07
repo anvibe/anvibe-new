@@ -87,29 +87,17 @@ export default function Solutions() {
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-12 md:mb-16 gap-4">
-            <div className="flex items-end gap-2.5">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
-                Solutions
-              </h2>
-              <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(7)</span>
+            <div>
+              <div className="flex items-end gap-2.5 mb-2 sm:mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
+                  Services
+                </h2>
+                <span className="text-sm sm:text-base mb-1" style={{ color: '#EEF4ED', opacity: 0.7 }}>(7)</span>
+              </div>
+              <p className="text-lg sm:text-xl md:text-2xl font-normal" style={{ color: '#EEF4ED', opacity: 0.7 }}>
+                what we offer
+              </p>
             </div>
-            <a 
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                const contactSection = document.getElementById('contact')
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' })
-                }
-              }}
-              className="hidden md:flex items-center gap-4 px-5 py-5 rounded-tl-3xl rounded-br-3xl transition-colors group"
-              style={{ background: 'rgba(238, 244, 237, 0.75)', color: '#1e1e1e' }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(238, 244, 237, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(238, 244, 237, 0.75)'}
-            >
-              <span className="text-lg font-normal tracking-tight">Let&apos;s Talk</span>
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
           </div>
         </ScrollAnimation>
 

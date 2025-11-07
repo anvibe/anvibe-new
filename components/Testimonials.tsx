@@ -67,9 +67,12 @@ export default function Testimonials() {
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[70px] mb-2 sm:mb-4" style={{ color: '#EEF4ED' }}>
               Our stack
             </h2>
+            <p className="text-lg sm:text-xl md:text-2xl font-normal" style={{ color: '#EEF4ED', opacity: 0.7 }}>
+              our tools
+            </p>
           </div>
         </ScrollAnimation>
 

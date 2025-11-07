@@ -181,7 +181,7 @@ export default function Hero() {
                         <div className="flex flex-col gap-4 sm:gap-6">
                           {[
                             { href: '/', label: 'Home' },
-                            { href: '/#projects', label: 'Works (8)' },
+                            { href: '/#we-design', label: 'Projects' },
                             { href: '/about', label: 'About' },
                             { href: '/vibecoding', label: 'Vibecoding' },
                             { href: '/blog', label: 'Blog' },
@@ -199,7 +199,22 @@ export default function Hero() {
                               >
                                 <Link 
                                   href={item.href}
-                                  onClick={() => setIsMenuOpen(false)}
+                                  onClick={(e) => {
+                                    if (item.href.startsWith('/#')) {
+                                      e.preventDefault()
+                                      setIsMenuOpen(false)
+                                      const sectionId = item.href.replace('/#', '')
+                                      // Small delay to ensure menu closes first
+                                      setTimeout(() => {
+                                        const section = document.getElementById(sectionId)
+                                        if (section) {
+                                          section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                                        }
+                                      }, 100)
+                                    } else {
+                                      setIsMenuOpen(false)
+                                    }
+                                  }}
                                   className={`text-lg sm:text-xl text-white hover:text-white/80 transition-colors ${isActive ? 'font-bold' : 'font-medium'}`}
                                 >
                                   {item.label}
@@ -299,20 +314,20 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Let&apos;s Talk Button */}
+            {/* Let&apos;s Start Button */}
             <a 
-              href="#contact"
+              href="#we-design"
               onClick={(e) => {
                 e.preventDefault()
-                const contactSection = document.getElementById('contact')
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' })
+                const weDesignSection = document.getElementById('we-design')
+                if (weDesignSection) {
+                  weDesignSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }
               }}
               className="w-full sm:w-auto bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl flex items-center justify-center sm:justify-start gap-3 sm:gap-4 hover:bg-white/90 transition-colors group" 
               style={{ color: '#000000' }}
             >
-              <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s Talk</span>
+              <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s start</span>
               <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" style={{ color: '#000000' }} />
             </a>
           </motion.div>

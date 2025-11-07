@@ -57,7 +57,7 @@ export default function PartnerLogos() {
   }
 
   return (
-    <section className="py-6 sm:py-8 overflow-hidden" style={{ background: '#040403' }}>
+    <section className="py-6 sm:py-8 overflow-hidden" style={{ background: '#0a0a09' }}>
       <div className="relative">
         <div 
           ref={containerRef}
