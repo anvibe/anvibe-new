@@ -112,7 +112,7 @@ export default function Hero() {
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 h-full">
           {/* Top Section */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-4 lg:gap-8" style={{ paddingTop: '20px' }}>
+          <div className="flex flex-col gap-4 sm:gap-6 md:gap-2 lg:gap-8" style={{ paddingTop: '20px' }}>
             {/* Logo and Menu Row */}
             <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap">
               {/* Brand Logo */}
@@ -122,7 +122,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 className="flex-shrink-0 max-w-full sm:max-w-[477px]"
               >
-                <div className="h-auto sm:h-[120px] md:h-[164px] flex items-start">
+                <div className="h-auto sm:h-[120px] md:h-[120px] lg:h-[164px] flex items-start">
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-bold text-white boldonse-regular">
                     Anvibe
                   </div>

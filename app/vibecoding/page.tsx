@@ -411,7 +411,7 @@ export default function VibecodingPage() {
             </ScrollAnimation>
 
             {/* Tools Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { name: 'Cursor', description: 'AI-first code editor', color: '#7EA6F0', logo: '/images/logos/cursor.svg' },
                 { name: 'Claude AI', description: 'Advanced reasoning AI', color: '#E1A0FF', logo: '/images/logos/claude.svg' },
