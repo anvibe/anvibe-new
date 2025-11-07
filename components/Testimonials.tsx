@@ -100,7 +100,7 @@ export default function Testimonials() {
               </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl sm:rounded-2xl" style={{ border: '1px solid rgba(238, 244, 237, 0.1)' }} />
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-10">
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-10 hidden lg:block">
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 sm:p-4 max-w-full sm:max-w-sm">
                 <h4 className="font-semibold text-sm sm:text-base" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>{currentTech.name}</h4>
                 <div className="flex items-center gap-2 mt-1 sm:mt-2">
