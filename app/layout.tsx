@@ -14,6 +14,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link rel="preconnect" href="https://fonts.fontshare.com" crossOrigin="anonymous" />
         <link href="https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{
           __html: `
