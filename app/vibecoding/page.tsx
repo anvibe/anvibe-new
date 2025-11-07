@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import ScrollAnimation from '@/components/ScrollAnimation'
-import PartnerLogos from '@/components/PartnerLogos'
 import NoiseBackground from '@/components/NoiseBackground'
 
 export default function VibecodingPage() {
@@ -192,28 +191,6 @@ export default function VibecodingPage() {
                 </p>
               </div>
             </motion.div>
-        </div>
-      </section>
-
-      {/* Logo Showcase Section */}
-      <section className="pb-12 sm:pb-16 pt-8 sm:pt-12">
-        <PartnerLogos withGradient={true} />
-      </section>
-
-      {/* The Vibecoding Philosophy */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 pt-12 sm:pt-16">
-        <div className="max-w-[1520px] mx-auto">
-          <ScrollAnimation direction="up" delay={0.1}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold mb-6 sm:mb-8 md:mb-10 leading-relaxed sm:!leading-[1.3] md:!leading-[1.4]" style={{ color: '#EEF4ED' }}>
-              The Vibecoding Philosophy
-            </h2>
-            <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-6 sm:mb-8" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-              Vibecoding represents a paradigm shift from traditional coding to AI-enhanced development. It&apos;s about finding your flow state with AI code editors, where ideas transform into code at the speed of thought.
-            </p>
-            <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[600px] mb-8 sm:mb-10" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-              Vibe coders don&apos;t just write code—they orchestrate AI tools to bring their creative visions to life, focusing on innovation rather than syntax.
-            </p>
-          </ScrollAnimation>
         </div>
       </section>
 
