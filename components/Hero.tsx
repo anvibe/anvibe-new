@@ -10,6 +10,7 @@ import TextScramble from './TextScramble'
 export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
   const [currentGradient, setCurrentGradient] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -31,12 +32,13 @@ export default function Hero() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     
-    const checkMobile = () => {
+    const checkDevice = () => {
       setIsMobile(window.innerWidth < 640)
+      setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024)
     }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    checkDevice()
+    window.addEventListener('resize', checkDevice)
+    return () => window.removeEventListener('resize', checkDevice)
   }, [])
 
   useEffect(() => {
@@ -112,7 +114,7 @@ export default function Hero() {
         {/* Content Overlay */}
         <div className="relative z-10 flex flex-col justify-between p-4 sm:p-6 md:p-8 h-full">
           {/* Top Section */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-2 lg:gap-8" style={{ paddingTop: '20px' }}>
+          <div className="flex flex-col gap-4 sm:gap-6 md:gap-1 lg:gap-8" style={{ paddingTop: '20px' }}>
             {/* Logo and Menu Row */}
             <div className="flex items-start justify-between gap-4 sm:gap-8 md:gap-24 flex-wrap">
               {/* Brand Logo */}
@@ -269,8 +271,8 @@ export default function Hero() {
               </div>
 
               {/* Tagline Text */}
-              <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile ? '1.4' : '0.8' }}>
-                {isMobile ? (
+              <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile || isTablet ? '1.4' : '0.8' }}>
+                {isMobile || isTablet ? (
                   <span style={{ display: 'block', wordBreak: 'normal', overflowWrap: 'break-word', hyphens: 'auto' }}>
                     We are VibeCoders, crafting interactive experiences with next-gen AI tools and LLM-driven engines. Our work bridges design, intelligence, and emotion.
                   </span>
