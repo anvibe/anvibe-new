@@ -61,12 +61,11 @@ export default function PartnerLogos({ withGradient = false }: PartnerLogosProps
   }
 
   return (
-    <div className="max-w-[1520px] mx-auto">
-      <div className="relative py-6 sm:py-8 rounded-xl sm:rounded-2xl overflow-hidden" style={{ 
-        background: withGradient 
-          ? 'linear-gradient(135deg, #3060eb 0%, #8f35ea 50%, #E1A0FF 100%)'
-          : '#040403'
-      }}>
+    <div className="relative py-6 sm:py-8 px-4 sm:px-6 md:px-8 overflow-hidden" style={{ 
+      background: withGradient 
+        ? 'linear-gradient(135deg, #3060eb 0%, #8f35ea 50%, #E1A0FF 100%)'
+        : '#040403'
+    }}>
       <div 
         ref={containerRef}
         className="flex gap-8 sm:gap-12 md:gap-16 items-center"
@@ -104,7 +103,6 @@ export default function PartnerLogos({ withGradient = false }: PartnerLogosProps
             </div>
           )
         })}
-      </div>
       </div>
     </div>
   )
