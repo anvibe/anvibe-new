@@ -16,6 +16,9 @@ export default function Hero() {
   const [currentGradient, setCurrentGradient] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [ctaVariant, setCtaVariant] = useState<'diagonal' | 'rounded' | 'geometric'>('rounded')
+  const [isAnimated, setIsAnimated] = useState(false)
+  const [marginValue, setMarginValue] = useState('0')
+  const [borderRadiusValue, setBorderRadiusValue] = useState('0')
   const menuRef = useRef<HTMLDivElement>(null)
 
   const gradients = [
@@ -110,17 +113,51 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [carouselItems.length])
 
+  useEffect(() => {
+    // Calculate responsive values once
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth
+      const margin = width >= 768 ? '2rem' : width >= 640 ? '1.5rem' : '1rem'
+      const borderRadius = width >= 640 ? '1rem' : '0.75rem'
+      setMarginValue(margin)
+      setBorderRadiusValue(borderRadius)
+    }
+
+    // Trigger animation after component mounts and values are set
+    const timer = setTimeout(() => {
+      setIsAnimated(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
-      <section 
-        className="relative overflow-hidden m-4 sm:m-6 md:m-8 rounded-xl sm:rounded-2xl" 
+      <motion.section 
+        className="relative overflow-hidden" 
+        initial={false}
+        animate={isAnimated ? {
+          margin: marginValue,
+          borderRadius: borderRadiusValue,
+        } : {
+          margin: '0',
+          borderRadius: '0',
+        }}
+        transition={{
+          duration: 3,
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.2,
+        }}
         style={{ 
           height: '80vh',
           minHeight: '80vh',
           position: 'relative',
           zIndex: 100,
           background: '#040403',
-          display: 'block'
+          display: 'block',
+          border: 'none',
+          outline: 'none',
+          boxShadow: 'none',
         }}
       >
         {/* Radial Background Canvas */}
@@ -348,7 +385,7 @@ export default function Hero() {
             </a>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   )
 }
