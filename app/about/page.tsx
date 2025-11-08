@@ -17,14 +17,14 @@ export default function AboutPage() {
   const menuRef = useRef<HTMLDivElement>(null)
   const [currentGradient, setCurrentGradient] = useState(0)
 
-  // Different color combinations for team member animations
+  // Different color combinations for team member animations - purple theme from hero
   const teamGradients = [
-    { color1: '#FF6B6B', color2: '#FF8E53', angle: 45 },
-    { color1: '#4ECDC4', color2: '#44A08D', angle: 135 },
-    { color1: '#A8E6CF', color2: '#FFD93D', angle: 225 },
-    { color1: '#6C5CE7', color2: '#A29BFE', angle: 315 },
-    { color1: '#FF9FF3', color2: '#F368E0', angle: 90 },
-    { color1: '#54A0FF', color2: '#5F27CD', angle: 180 },
+    { color1: '#4C1D95', color2: '#6B21A8', angle: 301 },
+    { color1: '#581C87', color2: '#7C3AED', angle: 135 },
+    { color1: '#6B21A8', color2: '#9333EA', angle: 45 },
+    { color1: '#5B21B6', color2: '#7C3AED', angle: 225 },
+    { color1: '#4C1D95', color2: '#6B21A8', angle: 301 },
+    { color1: '#581C87', color2: '#7C3AED', angle: 135 },
   ]
 
   useEffect(() => {
@@ -209,46 +209,29 @@ export default function AboutPage() {
               {/* Heading */}
               <div className="flex flex-col items-center text-center max-w-full gap-4 sm:gap-6 md:gap-8 px-4" style={{ gap: '0.3rem' }}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED' }}>
-                  We help brands grow with design
+                  We&apos;re pioneers of AI
                 </h1>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED' }}>
-                  that&apos;s intentional and{' '}
-                  <span style={{ color: '#EEF4ED', opacity: 0.7 }}>messaging</span>
+                  building interactive{' '}
+                  <span style={{ color: '#EEF4ED', opacity: 0.7 }}>experiences</span>
                 </h2>
                 <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED', opacity: 0.7 }}>
-                  that actually resonates.
+                  that enhance the human experience.
                 </h3>
               </div>
             </motion.div>
 
             {/* Hero Image with Stats */}
             <ScrollAnimation direction="up" delay={0.2}>
-              <div className="bg-white rounded-xl sm:rounded-2xl p-1.5 sm:p-2 mb-8 sm:mb-12 md:mb-16">
-                <div className="rounded-lg sm:rounded-xl overflow-hidden relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px]" style={{ background: '#030302' }}>
+              <div className="bg-black rounded-xl sm:rounded-2xl p-1.5 sm:p-2 mb-8 sm:mb-12 md:mb-16">
+                <div className="rounded-lg sm:rounded-xl overflow-hidden relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px]" style={{ background: '#000000' }}>
                   <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop"
-                    alt="About us"
+                    src="/images/projects/akanano/anvibe-team.png"
+                    alt="Anvibe team"
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 1520px"
                   />
-                  
-                  {/* Stats Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 flex flex-col sm:flex-row flex-nowrap">
-                    {[
-                      { value: '3m+', description: 'Capital raised by brands we helped out.' },
-                      { value: '289', description: 'Brands launched through our creative<br />process.' },
-                      { value: '56', description: 'Awards recognizing our branding<br />excellence.' },
-                      { value: '%', description: 'Client satisfaction rate across all delivered<br />work.' },
-                    ].map((stat, index) => (
-                      <ScrollAnimation key={index} direction="up" delay={0.3 + index * 0.1}>
-                        <div className="bg-white/95 backdrop-blur-sm flex flex-col justify-between items-start px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10 flex-1 min-h-[120px] sm:min-h-[150px] md:min-h-[200px]">
-                          <div className="text-3xl sm:text-4xl md:text-[50px] leading-tight sm:leading-[50px]" style={{ color: '#040403' }}>{stat.value}</div>
-                          <div className="text-xs sm:text-sm md:text-[15.5px] leading-[16px] sm:leading-[18px] md:leading-[20.8px]" style={{ color: '#040403', opacity: 0.8 }} dangerouslySetInnerHTML={{ __html: stat.description }} />
-                        </div>
-                      </ScrollAnimation>
-                    ))}
-                  </div>
                 </div>
               </div>
             </ScrollAnimation>
@@ -266,13 +249,14 @@ export default function AboutPage() {
                 <div className="rounded-xl p-6 sm:p-8 flex flex-col justify-between w-full lg:w-[748px]">
                   <div className="mb-6 sm:mb-8">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-tight sm:leading-[48px] md:leading-[64px] tracking-[-0.5px] sm:tracking-[-1.44px] mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>
-                      An obsession with<br />
-                      creative excellence.
+                      We build with AI<br />
+                      code editors.
                     </h2>
                     <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[430px]" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                      Over the years, Anvibe has been recognized for creative
-                      excellence, standout strategy, and the kind of digital
-                      experiences that leave a lasting mark.
+                      At Anvibe, we craft interactive experiences powered by AI
+                      code editors. We believe technology should amplify human
+                      creativity, not replace it. Every line of code we write
+                      is designed to enhance how people create, collaborate, and connect.
                     </p>
                   </div>
                 </div>
@@ -282,8 +266,8 @@ export default function AboutPage() {
               <ScrollAnimation direction="right" delay={0.2}>
                 <div className="w-full lg:w-[748px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[548px] relative rounded-xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1496&h=1096&fit=crop"
-                    alt="About us photo"
+                    src="/images/projects/akanano/anvibe-woman.png"
+                    alt="Anvibe woman"
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 748px"
@@ -408,34 +392,34 @@ export default function AboutPage() {
 
 const teamMembers = [
   {
-    name: 'Bruce Lee',
-    role: 'Creative Director',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop',
+    name: 'Fausto Melchiorre',
+    role: 'Founder-CEO',
+    image: '/images/projects/akanano/1.png',
   },
   {
-    name: 'Sarah Conor',
-    role: 'Founder',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop',
+    name: 'Emma Thompson',
+    role: 'Founder-CEO',
+    image: '/images/projects/akanano/2.png',
   },
   {
-    name: 'Sarah Silverman',
-    role: 'Brand Voice Lead',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop',
+    name: 'Sophia Chen',
+    role: 'Senior UX/UI Designer',
+    image: '/images/projects/akanano/3.png',
   },
   {
-    name: 'Carl Sagan',
-    role: 'Project Manager',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop',
+    name: 'Lucas Rodriguez',
+    role: 'SEO-ASO Expert',
+    image: '/images/projects/akanano/4.png',
   },
   {
-    name: 'Pakinam Ahmed',
-    role: 'UFO',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=500&fit=crop',
+    name: 'Olivia Martinez',
+    role: 'Marketing Expert',
+    image: '/images/projects/akanano/5.png',
   },
   {
-    name: 'Frodo Baggins',
-    role: 'NGO',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop',
+    name: 'Noah Anderson',
+    role: 'Creative Technologist',
+    image: '/images/projects/akanano/6.png',
   },
 ]
 
