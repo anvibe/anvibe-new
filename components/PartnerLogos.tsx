@@ -64,7 +64,7 @@ export default function PartnerLogos({ withGradient = false }: PartnerLogosProps
     <div className="relative py-6 sm:py-8 px-4 sm:px-6 md:px-8 overflow-hidden" style={{ 
       background: withGradient 
         ? 'linear-gradient(135deg, #3060eb 0%, #8f35ea 50%, #E1A0FF 100%)'
-        : '#040403'
+        : '#000000'
     }}>
       <div 
         ref={containerRef}
