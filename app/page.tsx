@@ -20,7 +20,9 @@ export default async function Home() {
       <ClientWrapper>
         <WeDesignSection />
         <StorySection />
-        <PartnerLogos />
+        <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: 'transparent', display: 'none' }}>
+          <PartnerLogos />
+        </section>
         <Projects />
         <Solutions />
         <Testimonials />

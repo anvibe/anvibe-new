@@ -13,10 +13,10 @@
 }
 
 /* Fallback imports for fonts */
-@import url('https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=archivo@400,700&f[]=clash-display@600&display=swap');
 
 :root {
-  --background: #ffffff;
+  --background: transparent;
   --foreground: #171717;
   --stroke: 4,4,3;
   --stroke-alpha: 0.95;
@@ -24,14 +24,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: transparent;
     --foreground: #EEF4ED;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: transparent;
   font-family: 'Archivo', sans-serif !important;
   margin: 0;
   padding: 0;
@@ -50,12 +50,24 @@ html {
   scroll-behavior: smooth;
   /* Enable smooth scrolling on all browsers */
   -webkit-overflow-scrolling: touch;
+  background: transparent;
 }
 
 /* Prevent flash of content before Hero loads */
-main {
+main:not([style*="background"]) {
   position: relative;
   overflow-x: hidden;
+  background: transparent;
+}
+
+/* Ensure client wrapper is transparent */
+.client-wrapper-content {
+  background: transparent !important;
+}
+
+/* Ensure sections without explicit backgrounds are transparent */
+section:not([style*="background"]) {
+  background: transparent !important;
 }
 
 main > section:first-child {

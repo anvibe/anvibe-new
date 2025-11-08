@@ -78,7 +78,7 @@ export default function AboutPage() {
       <NoiseBackground />
       
       {/* Navigation */}
-      <nav ref={menuRef} className="fixed top-0 left-0 right-0 z-[9999] py-3 sm:py-4 px-4 sm:px-6 md:px-8">
+      <nav ref={menuRef} className="fixed top-0 left-0 right-0 z-[9999] py-3 sm:py-4 px-4 sm:px-6 md:px-8" style={{ background: 'transparent' }}>
         <div className="max-w-full mx-auto">
           <div className="flex items-center justify-between h-10 sm:h-12">
             <motion.div
@@ -191,7 +191,7 @@ export default function AboutPage() {
         </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-32 md:pt-[144px] pb-6 sm:pb-8 px-4 sm:px-6 md:px-8 lg:px-[200px]">
+      <section className="pt-24 sm:pt-32 md:pt-[144px] pb-6 sm:pb-8 px-4 sm:px-6 md:px-8 lg:px-[200px] relative" style={{ background: 'transparent', zIndex: 1 }}>
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             {/* Header */}
@@ -202,8 +202,8 @@ export default function AboutPage() {
               className="flex flex-col gap-4 sm:gap-6 items-center mb-6 sm:mb-8 md:mb-10"
             >
               {/* About Badge */}
-              <div className="bg-white box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]">
-                <span className="text-sm sm:text-base" style={{ color: '#040403' }}>About</span>
+              <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                <span className="text-sm sm:text-base">About</span>
               </div>
 
               {/* Heading */}
@@ -257,7 +257,7 @@ export default function AboutPage() {
       </section>
 
       {/* Creative Excellence Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 md:pb-24 lg:pb-32 pt-12 sm:pt-16">
+      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pb-12 sm:pb-16 md:pb-24 lg:pb-32 pt-12 sm:pt-16 relative" style={{ background: 'transparent', zIndex: 1 }}>
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-2 items-start justify-center">
@@ -266,8 +266,8 @@ export default function AboutPage() {
                 <div className="rounded-xl p-6 sm:p-8 flex flex-col justify-between w-full lg:w-[748px]">
                   <div className="mb-6 sm:mb-8">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-tight sm:leading-[48px] md:leading-[64px] tracking-[-0.5px] sm:tracking-[-1.44px] mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>
-                      An obsession with creative<br className="hidden sm:block" />
-                      <span className="sm:hidden"> </span>excellence.
+                      An obsession with<br />
+                      creative excellence.
                     </h2>
                     <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[430px]" style={{ color: '#EEF4ED', opacity: 0.8 }}>
                       Over the years, Anvibe has been recognized for creative
@@ -296,18 +296,18 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-24 lg:pb-32">
+      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-24 lg:pb-32 relative" style={{ background: 'transparent', zIndex: 1 }}>
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
-              <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4">
-                <div className="bg-white box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]">
-                  <span className="text-sm sm:text-base text-center" style={{ color: '#040403' }}>The Team</span>
+              <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[600px] mx-auto px-4">
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base text-center">The Team</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-tight sm:!leading-[60px] md:!leading-[70px] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  The superstar team,<br className="hidden sm:block" />
-                  <span className="sm:hidden"> </span>always ready
+                  The superstar team,<br />
+                  always ready
                 </h2>
               </div>
             </ScrollAnimation>
@@ -355,15 +355,15 @@ export default function AboutPage() {
       </section>
 
       {/* Roadmap Section */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16">
+      <section className="px-4 sm:px-6 md:px-8 lg:px-[200px] pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16 relative" style={{ background: 'transparent', zIndex: 1 }}>
         <div className="max-w-7xl mx-auto">
           <div className="max-w-[1520px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 items-start justify-center">
               {/* Header */}
               <ScrollAnimation direction="left" delay={0.1}>
                 <div className="flex flex-col gap-2 sm:gap-2.5 items-start max-w-full sm:max-w-[300px] px-4 sm:px-0">
-                  <div className="bg-white box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]">
-                    <span className="text-sm sm:text-base" style={{ color: '#040403' }}>Roadmap</span>
+                  <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                    <span className="text-sm sm:text-base">Roadmap</span>
                   </div>
                   <h2 className="text-3xl sm:text-4xl md:text-[44.6px] font-bold leading-tight sm:leading-[48px] md:leading-[60px] tracking-[-0.5px] sm:tracking-[-1.44px]" style={{ color: '#EEF4ED' }}>
                     What&apos;s<br className="hidden sm:block" />

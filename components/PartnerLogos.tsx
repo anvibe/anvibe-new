@@ -61,54 +61,52 @@ export default function PartnerLogos({ withGradient = false }: PartnerLogosProps
   }
 
   return (
-    <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: '#040403' }}>
-      <div className="max-w-[1520px] mx-auto">
-        <div className="relative py-6 sm:py-8 rounded-xl sm:rounded-2xl overflow-hidden" style={{ 
-          background: withGradient 
-            ? 'linear-gradient(135deg, #3060eb 0%, #8f35ea 50%, #E1A0FF 100%)'
-            : '#040403'
-        }}>
-        <div 
-          ref={containerRef}
-          className="flex gap-8 sm:gap-12 md:gap-16 items-center"
-          style={{ width: 'fit-content' }}
-        >
-          {/* Duplicate logos for seamless loop */}
-          {[...logoFiles, ...logoFiles, ...logoFiles].map((logo, idx) => {
-            const logoName = getLogoName(logo)
-            
-            return (
-              <div
-                key={idx}
-                className="flex-shrink-0 flex items-center gap-2 sm:gap-3 opacity-70 hover:opacity-100 transition-opacity"
-              >
-                {/* Logo Image */}
-                <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex-shrink-0">
-                  <Image
-                    src={`/images/logos/${logo}`}
-                    alt={logoName}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 640px) 32px, (max-width: 768px) 40px, 48px"
-                    style={{ filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)' }}
-                    onError={(e) => {
-                      // Fallback if image doesn't exist
-                      const target = e.target as HTMLImageElement
-                      target.style.display = 'none'
-                    }}
-                  />
-                </div>
-                {/* Logo Text */}
-                  <span className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap" style={{ color: '#EEF4ED' }}>
-                  {logoName}
-                </span>
+    <div className="max-w-[1520px] mx-auto">
+      <div className="relative py-6 sm:py-8 rounded-xl sm:rounded-2xl overflow-hidden" style={{ 
+        background: withGradient 
+          ? 'linear-gradient(135deg, #3060eb 0%, #8f35ea 50%, #E1A0FF 100%)'
+          : '#040403'
+      }}>
+      <div 
+        ref={containerRef}
+        className="flex gap-8 sm:gap-12 md:gap-16 items-center"
+        style={{ width: 'fit-content' }}
+      >
+        {/* Duplicate logos for seamless loop */}
+        {[...logoFiles, ...logoFiles, ...logoFiles].map((logo, idx) => {
+          const logoName = getLogoName(logo)
+          
+          return (
+            <div
+              key={idx}
+              className="flex-shrink-0 flex items-center gap-2 sm:gap-3 opacity-70 hover:opacity-100 transition-opacity"
+            >
+              {/* Logo Image */}
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex-shrink-0">
+                <Image
+                  src={`/images/logos/${logo}`}
+                  alt={logoName}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 32px, (max-width: 768px) 40px, 48px"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)' }}
+                  onError={(e) => {
+                    // Fallback if image doesn't exist
+                    const target = e.target as HTMLImageElement
+                    target.style.display = 'none'
+                  }}
+                />
               </div>
-            )
-          })}
-        </div>
-        </div>
+              {/* Logo Text */}
+                <span className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap" style={{ color: '#EEF4ED' }}>
+                {logoName}
+              </span>
+            </div>
+          )
+        })}
       </div>
-    </section>
+      </div>
+    </div>
   )
 }
 

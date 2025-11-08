@@ -13,11 +13,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning style={{ background: 'transparent' }}>
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://fonts.fontshare.com" crossOrigin="anonymous" />
-        <link href="https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=archivo@400,700&f[]=clash-display@600&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Prevent flash - hide ClientWrapper content initially */
@@ -38,7 +38,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning style={{ background: 'transparent' }}>
         {children}
         <CustomCursor />
         <script dangerouslySetInnerHTML={{

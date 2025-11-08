@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import ScrollAnimation from './ScrollAnimation'
 import RadialBackground from './RadialBackground'
 
@@ -52,6 +53,7 @@ const techStack = [
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentGradient, setCurrentGradient] = useState(0)
+  const [isAutoRotating, setIsAutoRotating] = useState(true)
 
   const gradients = [
     { color1: '#FF6B6B', color2: '#FF8E53', angle: 45 },
@@ -78,12 +80,40 @@ export default function Testimonials() {
     }
   }, [gradients.length])
 
+  useEffect(() => {
+    // Auto-rotate tech stack carousel every 4 seconds
+    if (!isAutoRotating) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % techStack.length)
+    }, 4000) // Change logo every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [techStack.length, isAutoRotating])
+
   const nextSlide = () => {
+    setIsAutoRotating(false)
     setCurrentIndex((prev) => (prev + 1) % techStack.length)
+    // Resume auto-rotation after 8 seconds
+    setTimeout(() => setIsAutoRotating(true), 8000)
   }
 
   const prevSlide = () => {
+    setIsAutoRotating(false)
     setCurrentIndex((prev) => (prev - 1 + techStack.length) % techStack.length)
+    // Resume auto-rotation after 8 seconds
+    setTimeout(() => setIsAutoRotating(true), 8000)
+  }
+
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
+  }
+
+  const transition = {
+    duration: 0.5,
+    ease: 'easeInOut'
   }
 
   const currentTech = techStack[currentIndex]
@@ -113,18 +143,28 @@ export default function Testimonials() {
                   border: '1px solid rgba(238, 244, 237, 0.1)'
                 }}>
                   <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center">
-                    <div className="absolute inset-2 sm:inset-3 md:inset-4">
-                      <Image
-                        src={`/images/logos/${currentTech.logo}`}
-                        alt={currentTech.name}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
-                        style={{ 
-                          filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)'
-                        }}
-                      />
-                    </div>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentIndex}
+                        className="absolute inset-2 sm:inset-3 md:inset-4"
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        variants={fadeVariants}
+                        transition={transition}
+                      >
+                        <Image
+                          src={`/images/logos/${currentTech.logo}`}
+                          alt={currentTech.name}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
+                          style={{ 
+                            filter: 'brightness(0) saturate(100%) invert(93%) sepia(9%) saturate(187%) hue-rotate(94deg) brightness(108%) contrast(96%)'
+                          }}
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
               </div>
@@ -139,9 +179,20 @@ export default function Testimonials() {
           {/* Description */}
           <ScrollAnimation direction="right" delay={0.2}>
             <div className="p-4 sm:p-6 md:p-8 lg:p-12">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 sm:mb-8" style={{ color: '#EEF4ED', fontFamily: 'Inter, sans-serif' }}>
-                {currentTech.description}
-              </h3>
+              <AnimatePresence mode="wait">
+                <motion.h3
+                  key={currentIndex}
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 sm:mb-8"
+                  style={{ color: '#EEF4ED', fontFamily: 'Archivo, sans-serif', fontWeight: 700 }}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={fadeVariants}
+                  transition={transition}
+                >
+                  {currentTech.description}
+                </motion.h3>
+              </AnimatePresence>
 
               {/* Navigation */}
               <div className="flex items-center gap-3 sm:gap-4">

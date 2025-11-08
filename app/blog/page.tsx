@@ -23,6 +23,11 @@ export default async function BlogPage() {
         <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="mb-16">
+                <div className="mb-6">
+                  <div className="box-border inline-flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                    <span className="text-sm sm:text-base">Blog</span>
+                  </div>
+                </div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-8" style={{ color: '#EEF4ED' }}>
                   Latest Insights & Updates
                 </h1>

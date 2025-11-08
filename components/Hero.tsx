@@ -15,6 +15,7 @@ export default function Hero() {
   const [isTablet, setIsTablet] = useState(false)
   const [currentGradient, setCurrentGradient] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [ctaVariant, setCtaVariant] = useState<'diagonal' | 'rounded' | 'geometric'>('rounded')
   const menuRef = useRef<HTMLDivElement>(null)
 
   const gradients = [
@@ -30,6 +31,18 @@ export default function Hero() {
     { text: 'Interactive Experiences', color: '#E1A0FF' },
     { text: 'LLM-Driven Solutions', color: '#4BD760' },
   ]
+
+  const getCtaShapeClasses = () => {
+    switch (ctaVariant) {
+      case 'rounded':
+        return 'rounded-lg sm:rounded-xl'
+      case 'geometric':
+        return 'rounded-tr-2xl rounded-bl-2xl sm:rounded-tr-3xl sm:rounded-bl-3xl'
+      case 'diagonal':
+      default:
+        return 'rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl'
+    }
+  }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -325,7 +338,7 @@ export default function Hero() {
                   weDesignSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }
               }}
-              className="inline-flex items-center gap-3 sm:gap-4 bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 rounded-tl-2xl rounded-br-2xl sm:rounded-tl-3xl sm:rounded-br-3xl hover:bg-white/90 transition-colors group" 
+              className={`inline-flex items-center gap-3 sm:gap-4 bg-white/75 backdrop-blur-sm px-4 py-4 sm:px-5 sm:py-5 ${getCtaShapeClasses()} hover:bg-white/90 transition-colors group`}
               style={{ color: '#000000' }}
             >
               <span className="text-base sm:text-lg font-normal tracking-tight" style={{ color: '#000000' }}>Let&apos;s start</span>

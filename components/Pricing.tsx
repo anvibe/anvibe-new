@@ -109,7 +109,7 @@ export default function Pricing() {
 
               {/* CTA */}
               <motion.button
-                className="w-full py-3 sm:py-4 rounded-full font-medium transition-colors text-sm sm:text-base bg-white text-black hover:bg-slate-100"
+                className="w-full py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium transition-colors text-sm sm:text-base bg-white text-black hover:bg-slate-100"
                 style={{ backgroundColor: '#ffffff', color: '#000000' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

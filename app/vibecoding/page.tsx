@@ -172,8 +172,8 @@ export default function VibecodingPage() {
               className="flex flex-col gap-4 sm:gap-6 items-center mb-6 sm:mb-8 md:mb-10"
             >
               {/* Vibecoding Badge */}
-              <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px] hero-gradient">
-                <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Vibecoding</span>
+              <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                <span className="text-sm sm:text-base font-bold">Vibecoding</span>
               </div>
 
               {/* Heading */}
@@ -200,8 +200,8 @@ export default function VibecodingPage() {
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #7EA6F0 0%, #3060eb 100%)' }}>
-                  <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Core Principles</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base font-bold">Core Principles</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Core Principles of Vibecoding
@@ -260,8 +260,8 @@ export default function VibecodingPage() {
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #FD5C5C 0%, #E28F2F 100%)' }}>
-                  <span className="text-sm sm:text-base text-center font-bold" style={{ color: '#FFFFFF' }}>Comparison</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base text-center font-bold">Comparison</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Vibecoding vs Traditional Coding
@@ -337,8 +337,8 @@ export default function VibecodingPage() {
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #E1A0FF 0%, #8f35ea 100%)' }}>
-                  <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Tools</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base font-bold">Tools</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Popular Vibecoding Tools
@@ -390,8 +390,8 @@ export default function VibecodingPage() {
         <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #4BD760 0%, #3060eb 100%)' }}>
-                  <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Benefits</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base font-bold">Benefits</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Why Choose Vibecoding?
@@ -461,8 +461,8 @@ export default function VibecodingPage() {
         <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #E28F2F 0%, #FD5C5C 100%)' }}>
-                  <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Use Cases</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base font-bold">Use Cases</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Real-World Applications
@@ -548,8 +548,8 @@ export default function VibecodingPage() {
         <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] mx-auto px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #3060eb 0%, #E1A0FF 100%)' }}>
-                  <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Getting Started</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base font-bold">Getting Started</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Start Your Vibecoding Journey
@@ -612,8 +612,8 @@ export default function VibecodingPage() {
         <div className="max-w-[1520px] mx-auto">
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="flex flex-col gap-2 sm:gap-2.5 items-start mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[530px] px-4 sm:px-0">
-                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-br-[20px] rounded-tl-[20px] sm:rounded-br-[24px] sm:rounded-tl-[24px]" style={{ background: 'linear-gradient(135deg, #4BD760 0%, #7EA6F0 100%)' }}>
-                  <span className="text-sm sm:text-base font-bold" style={{ color: '#FFFFFF' }}>Resources</span>
+                <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
+                  <span className="text-sm sm:text-base font-bold">Resources</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
                   Learn & Connect

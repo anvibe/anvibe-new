@@ -260,7 +260,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               />
               <button
                 type="submit"
-                className="w-full bg-white text-[#1e1e1e] rounded-3xl py-4 font-medium hover:bg-slate-100 transition-colors"
+                className="w-full bg-white text-[#1e1e1e] rounded-lg sm:rounded-xl py-4 font-medium hover:bg-slate-100 transition-colors"
               >
                 Send message
               </button>
