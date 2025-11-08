@@ -17,12 +17,12 @@ export default async function Home() {
   return (
     <main className="min-h-screen relative">
       <Hero />
+      <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: 'transparent' }}>
+        <PartnerLogos />
+      </section>
       <ClientWrapper>
         <WeDesignSection />
         <StorySection />
-        <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-[200px]" style={{ background: 'transparent', display: 'none' }}>
-          <PartnerLogos />
-        </section>
         <Projects />
         <Solutions />
         <Testimonials />
