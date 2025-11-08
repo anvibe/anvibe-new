@@ -15,7 +15,7 @@ import ClientWrapper from '@/components/ClientWrapper'
 
 export default async function Home() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative" style={{ background: '#000000' }}>
       <Hero />
       <PartnerLogos />
       <ClientWrapper>

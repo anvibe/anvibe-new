@@ -31,7 +31,7 @@
 
 body {
   color: var(--foreground);
-  background: transparent;
+  background: #000000;
   font-family: 'Archivo', sans-serif !important;
   margin: 0;
   padding: 0;
@@ -50,7 +50,7 @@ html {
   scroll-behavior: smooth;
   /* Enable smooth scrolling on all browsers */
   -webkit-overflow-scrolling: touch;
-  background: transparent;
+  background: #000000;
 }
 
 /* Prevent flash of content before Hero loads */

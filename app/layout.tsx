@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ background: 'transparent' }}>
+    <html lang="en" suppressHydrationWarning style={{ background: '#000000' }}>
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://fonts.fontshare.com" crossOrigin="anonymous" />
@@ -38,7 +38,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body suppressHydrationWarning style={{ background: 'transparent' }}>
+      <body suppressHydrationWarning style={{ background: '#000000' }}>
         {children}
         <CustomCursor />
         <script dangerouslySetInnerHTML={{

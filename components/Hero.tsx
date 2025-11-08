@@ -113,13 +113,13 @@ export default function Hero() {
   return (
     <>
       <section 
-        className="relative overflow-hidden h-screen" 
+        className="relative overflow-hidden m-4 sm:m-6 md:m-8 rounded-xl sm:rounded-2xl" 
         style={{ 
-          minHeight: '100dvh',
+          height: '80vh',
+          minHeight: '80vh',
           position: 'relative',
           zIndex: 100,
           background: '#040403',
-          width: '100%',
           display: 'block'
         }}
       >
@@ -152,7 +152,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              className="flex-shrink-0 relative flex items-start z-[9999]"
+              className="flex-shrink-0 relative flex items-center z-[9999]"
               ref={menuRef}
             >
                 <motion.button 
@@ -160,22 +160,24 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="flex flex-col gap-[9px] h-10 items-end justify-start w-12 sm:w-16 relative z-[9999]"
+                  className="flex items-center justify-center h-10 w-12 sm:w-16 relative z-[9999] rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors p-2"
                   aria-label="Toggle menu"
                 >
-                  <div className="relative w-12 sm:w-16 h-[18px] flex items-center justify-end">
+                  <div className="relative w-full h-full flex flex-col items-center justify-center gap-1.5">
                     {/* Top bar */}
                     <motion.div
-                      className="bg-white h-[2px] rounded-full absolute right-0"
-                      initial={{ width: 48, y: 0, rotate: 0 }}
-                      animate={isMenuOpen ? { width: 20, y: 8, rotate: 45 } : { width: 48, y: 0, rotate: 0 }}
+                      className="bg-white h-[2px] rounded-full"
+                      style={{ width: '20px' }}
+                      initial={{ rotate: 0 }}
+                      animate={isMenuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     />
                     {/* Bottom bar */}
                     <motion.div
-                      className="bg-white h-[2px] rounded-full absolute right-0"
-                      initial={{ width: 28, y: 9, rotate: 0 }}
-                      animate={isMenuOpen ? { width: 20, y: 8, rotate: -45 } : { width: 28, y: 9, rotate: 0 }}
+                      className="bg-white h-[2px] rounded-full"
+                      style={{ width: '20px' }}
+                      initial={{ rotate: 0 }}
+                      animate={isMenuOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     />
                   </div>
