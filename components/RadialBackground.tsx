@@ -74,13 +74,20 @@ export default function RadialBackground({ gradient, zIndex = -1 }: RadialBackgr
     }
 
     let start = performance.now()
+    let animationStartTime = start + 500 // Delay animation start by 500ms
+    const ANIMATION_FADE_IN_DURATION = 3 // 3 seconds to fade in the scale animation
+    
     function frame(now: number) {
       if (!ctx) return
       const t = (now - start) / 1000
+      const animationTime = Math.max(0, (now - animationStartTime) / 1000)
       ctx.clearRect(0, 0, w, h)
 
-      // Scale animation - grow and shrink in a loop
-      const scaleCycle = Math.sin(t * 0.5) * 0.15 + 1 // Oscillates between 0.85 and 1.15
+      // Scale animation - grow and shrink in a loop, but fade in smoothly
+      const scaleAnimationProgress = Math.min(animationTime / ANIMATION_FADE_IN_DURATION, 1)
+      const scaleEase = 1 - Math.pow(1 - scaleAnimationProgress, 3) // Ease out cubic
+      const baseScale = Math.sin(t * 0.5) * 0.15
+      const scaleCycle = 1 + (baseScale * scaleEase) // Smoothly fade in the pulsing effect
       // Make radius bigger than viewport - use diagonal for full coverage
       const diagonal = Math.sqrt(w * w + h * h)
       const baseRadius = diagonal * 0.6 // 60% of diagonal ensures full coverage
@@ -138,7 +145,7 @@ export default function RadialBackground({ gradient, zIndex = -1 }: RadialBackgr
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 3, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 2, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
           className="absolute inset-0 w-full h-full"
           style={{
             background: `linear-gradient(${currentGradient.angle}deg, ${currentGradient.color1}, ${currentGradient.color2})`,

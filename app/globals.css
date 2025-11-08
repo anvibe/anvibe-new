@@ -74,6 +74,11 @@ main > section:first-child {
   position: relative;
   z-index: 100;
   will-change: transform;
+  /* Safari-specific fixes */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  border-top: none !important;
+  outline: none !important;
 }
 
 /* Hide all sections except Hero initially, then show them */

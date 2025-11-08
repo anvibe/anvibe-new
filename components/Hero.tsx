@@ -135,7 +135,10 @@ export default function Hero() {
     <>
       <motion.section 
         className="relative overflow-hidden" 
-        initial={false}
+        initial={{
+          margin: '0',
+          borderRadius: '0',
+        }}
         animate={isAnimated ? {
           margin: marginValue,
           borderRadius: borderRadiusValue,
@@ -158,6 +161,9 @@ export default function Hero() {
           border: 'none',
           outline: 'none',
           boxShadow: 'none',
+          WebkitTransform: 'translateZ(0)',
+          WebkitBackfaceVisibility: 'hidden',
+          WebkitPerspective: 1000,
         }}
       >
         {/* Radial Background Canvas */}
