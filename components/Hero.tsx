@@ -239,12 +239,12 @@ export default function Hero() {
                       <div className="px-4 sm:px-6 py-6 sm:py-8">
                         <div className="flex flex-col gap-4 sm:gap-6">
                           {[
-                            { href: '/', label: 'Home' },
-                            { href: '/#we-design', label: 'Projects' },
-                            { href: '/about', label: 'About' },
-                            { href: '/vibecoding', label: 'Vibecoding' },
-                            { href: '/blog', label: 'Blog' },
-                            { href: '/#contact', label: 'Contact' },
+                            { href: '/', label: 'Home 🏠' },
+                            { href: '/#we-design', label: 'Projects 💼' },
+                            { href: '/about', label: 'About 👥' },
+                            { href: '/vibecoding', label: 'Vibecoding 🚀' },
+                            { href: '/blog', label: 'Blog 📝' },
+                            { href: '/#contact', label: 'Contact 💬' },
                           ].map((item, index) => {
                             const isActive = item.href === '/' 
                               ? pathname === '/' 
@@ -348,13 +348,13 @@ export default function Hero() {
               <p className="text-xl sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight tracking-tight" style={{ paddingTop: '0', lineHeight: isMobile || isTablet ? '1.4' : '0.8' }}>
                 {isMobile || isTablet ? (
                   <span style={{ display: 'block', wordBreak: 'normal', overflowWrap: 'break-word', hyphens: 'auto' }}>
-                    We are VibeCoders, crafting interactive experiences with next-gen AI tools and LLM-driven engines. Our work bridges design, intelligence, and emotion.
+                    We are VibeCoders 🚀, crafting interactive experiences ✨ with next-gen AI tools 🤖 and LLM-driven engines. Our work bridges design, intelligence, and emotion 💫.
                   </span>
                 ) : (
                   <TextScramble 
                     texts={[
-                      "We are VibeCoders, crafting interactive experiences<br/>with next-gen AI tools and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion.",
-                      "Building the future of digital experiences<br/>through innovative AI solutions and creative technology.<br/>Where innovation meets imagination."
+                      "We are VibeCoders 🚀, crafting interactive experiences ✨<br/>with next-gen AI tools 🤖 and LLM-driven engines.<br/>Our work bridges design, intelligence, and emotion 💫.",
+                      "Building the future of digital experiences 🌐<br/>through innovative AI solutions 🤖 and creative technology.<br/>Where innovation meets imagination ✨."
                     ]}
                     speed={10}
                     delay={1000}

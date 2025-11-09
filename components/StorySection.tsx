@@ -71,8 +71,8 @@ export default function StorySection() {
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 z-10">
                   <div className="max-w-full sm:max-w-[280px] opacity-80">
                     <p className="text-sm sm:text-[15.6px] leading-[18px] sm:leading-[20.8px] text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
-                      Telling your story that makes hearts skip<br className="hidden sm:block" />
-                      <span className="sm:hidden"> </span>a beat and minds remember.
+                      Telling your story 📖 that makes hearts skip 💓<br className="hidden sm:block" />
+                      <span className="sm:hidden"> </span>a beat and minds remember 🧠.
                     </p>
                   </div>
                 </div>

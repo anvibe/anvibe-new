@@ -130,12 +130,12 @@ export default function AboutPage() {
                       <div className="px-4 sm:px-6 py-6 sm:py-8">
                         <div className="flex flex-col gap-4 sm:gap-6">
                           {[
-                            { href: '/', label: 'Home' },
-                            { href: '/#projects', label: 'Works (8)' },
-                            { href: '/about', label: 'About' },
-                            { href: '/vibecoding', label: 'Vibecoding' },
-                            { href: '/blog', label: 'Blog' },
-                            { href: '#contact', label: 'Contact' },
+                            { href: '/', label: 'Home 🏠' },
+                            { href: '/#projects', label: 'Works (8) 💼' },
+                            { href: '/about', label: 'About 👥' },
+                            { href: '/vibecoding', label: 'Vibecoding 🚀' },
+                            { href: '/blog', label: 'Blog 📝' },
+                            { href: '#contact', label: 'Contact 💬' },
                           ].map((item, index) => {
                             const isActive = item.href === '/' 
                               ? pathname === '/' 
@@ -209,14 +209,14 @@ export default function AboutPage() {
               {/* Heading */}
               <div className="flex flex-col items-center text-center max-w-full gap-4 sm:gap-6 md:gap-8 px-4" style={{ gap: '0.3rem' }}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED' }}>
-                  We&apos;re pioneers of AI
+                  We&apos;re pioneers of AI 🚀
                 </h1>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED' }}>
-                  building interactive{' '}
+                  building interactive ✨{' '}
                   <span style={{ color: '#EEF4ED', opacity: 0.7 }}>experiences</span>
                 </h2>
                 <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.5px] sm:tracking-[-1.8px] leading-tight sm:!leading-[56px]" style={{ color: '#EEF4ED', opacity: 0.7 }}>
-                  that enhance the human experience.
+                  that enhance the human experience 👥.
                 </h3>
               </div>
             </motion.div>
@@ -249,14 +249,14 @@ export default function AboutPage() {
                 <div className="rounded-xl p-6 sm:p-8 flex flex-col justify-between w-full lg:w-[748px]">
                   <div className="mb-6 sm:mb-8">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-tight sm:leading-[48px] md:leading-[64px] tracking-[-0.5px] sm:tracking-[-1.44px] mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>
-                      We build with AI<br />
-                      code editors.
+                      We build with AI 🤖<br />
+                      code editors 💻.
                     </h2>
                     <p className="text-sm sm:text-[15.4px] leading-[18px] sm:leading-[20.8px] max-w-full sm:max-w-[430px]" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                      At Anvibe, we craft interactive experiences powered by AI
-                      code editors. We believe technology should amplify human
-                      creativity, not replace it. Every line of code we write
-                      is designed to enhance how people create, collaborate, and connect.
+                      At Anvibe, we craft interactive experiences ✨ powered by AI
+                      code editors 🤖. We believe technology should amplify human
+                      creativity 🎨, not replace it. Every line of code we write
+                      is designed to enhance how people create, collaborate 👥, and connect 🌐.
                     </p>
                   </div>
                 </div>
@@ -285,13 +285,13 @@ export default function AboutPage() {
           <div className="max-w-[1520px] mx-auto">
             {/* Header */}
             <ScrollAnimation direction="up" delay={0.1}>
-              <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[600px] mx-auto px-4">
+              <div className="flex flex-col gap-2 sm:gap-2.5 items-center mb-6 sm:mb-8 md:mb-10 max-w-full sm:max-w-[650px] mx-auto">
                 <div className="box-border flex h-[40px] sm:h-[49px] items-center justify-center px-4 sm:px-[17px] py-0 rounded-2xl sm:rounded-3xl" style={{ backgroundColor: '#000000', color: '#EEF4ED' }}>
                   <span className="text-sm sm:text-base text-center">The Team</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-tight sm:!leading-[60px] md:!leading-[70px] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  The superstar team,<br />
-                  always ready
+                  The superstar team ⭐,<br />
+                  always ready 🚀
                 </h2>
               </div>
             </ScrollAnimation>
@@ -351,7 +351,7 @@ export default function AboutPage() {
                   </div>
                   <h2 className="text-3xl sm:text-4xl md:text-[44.6px] font-bold leading-tight sm:leading-[48px] md:leading-[60px] tracking-[-0.5px] sm:tracking-[-1.44px]" style={{ color: '#EEF4ED' }}>
                     What&apos;s<br className="hidden sm:block" />
-                    <span className="sm:hidden"> </span>coming next
+                    <span className="sm:hidden"> </span>coming next 🔮
                   </h2>
                 </div>
               </ScrollAnimation>
@@ -393,32 +393,32 @@ export default function AboutPage() {
 const teamMembers = [
   {
     name: 'Fausto Melchiorre',
-    role: 'Founder-CEO',
+    role: 'Founder-CEO 👔',
     image: '/images/projects/akanano/1.png',
   },
   {
     name: 'Emma Thompson',
-    role: 'Founder-CEO',
+    role: 'Founder-CEO 👔',
     image: '/images/projects/akanano/2.png',
   },
   {
     name: 'Sophia Chen',
-    role: 'Senior UX/UI Designer',
+    role: 'Senior UX/UI Designer 🎨',
     image: '/images/projects/akanano/3.png',
   },
   {
     name: 'Lucas Rodriguez',
-    role: 'SEO-ASO Expert',
+    role: 'SEO-ASO Expert 📈',
     image: '/images/projects/akanano/4.png',
   },
   {
     name: 'Olivia Martinez',
-    role: 'Marketing Expert',
+    role: 'Marketing Expert 📢',
     image: '/images/projects/akanano/5.png',
   },
   {
     name: 'Noah Anderson',
-    role: 'Creative Technologist',
+    role: 'Creative Technologist 💻',
     image: '/images/projects/akanano/6.png',
   },
 ]

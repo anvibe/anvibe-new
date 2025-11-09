@@ -30,9 +30,9 @@ export default function Contact() {
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>Let's talk</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>Let's talk 💬</h2>
             <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4" style={{ color: '#EEF4ED' }}>
-              We'd love to hear from you — whether you have a project in mind, or just want to say hi.
+              We'd love to hear from you 💙 — whether you have a project in mind 💡, or just want to say hi 👋.
             </p>
           </div>
         </ScrollAnimation>
@@ -70,7 +70,7 @@ export default function Contact() {
             </div>
           </div>
           <p className="text-sm sm:text-base text-center sm:text-left" style={{ color: '#EEF4ED' }}>
-            Get a detailed plan from our team within 24 hours.
+            Get a detailed plan 📋 from our team 👥 within 24 hours ⏰.
           </p>
           </div>
         </ScrollAnimation>
@@ -83,7 +83,7 @@ export default function Contact() {
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Name 👤"
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full px-4 py-3 sm:py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-colors text-sm sm:text-base"
@@ -95,7 +95,7 @@ export default function Contact() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Email 📧"
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-4 py-3 sm:py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-colors text-sm sm:text-base"
@@ -106,7 +106,7 @@ export default function Contact() {
             <div>
               <textarea
                 name="message"
-                placeholder="Project details"
+                placeholder="Project details 💼"
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
@@ -119,7 +119,7 @@ export default function Contact() {
               type="submit"
               className="w-full py-3 sm:py-4 bg-black text-white rounded-lg sm:rounded-xl hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-slate-200 transition-colors font-medium text-sm sm:text-base"
             >
-              Send message
+              Send message 📤
             </button>
           </div>
         </form>

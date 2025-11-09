@@ -21,16 +21,16 @@ export default function Blog() {
           <div className="flex flex-col md:flex-row justify-between items-start mb-8 sm:mb-12 md:mb-16 gap-6">
             <div className="mb-4 sm:mb-8 md:mb-0">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight sm:leading-[70px]" style={{ color: '#EEF4ED' }}>
-                Latest Insights & Updates
+                Latest Insights & Updates 📚
               </h2>
               <p className="text-lg sm:text-xl max-w-md mb-4 sm:mb-6" style={{ color: '#EEF4ED' }}>
-                Stay updated with the latest insights about AI-powered development
+                Stay updated with the latest insights 💡 about AI-powered development 🤖
               </p>
               <Link 
                 href="/blog"
                 className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 border-2 rounded-full transition-colors hover:bg-[rgba(10,10,9,0.5)] text-sm sm:text-base" 
                 style={{ borderColor: '#0f0f0e', color: '#EEF4ED' }}>
-                Visit Blog
+                Visit Blog 📖
                 <ArrowRight size={18} className="sm:w-5 sm:h-5" style={{ color: '#EEF4ED' }} />
               </Link>
             </div>
@@ -40,7 +40,7 @@ export default function Blog() {
         {/* Blog Posts */}
         {blogPosts.length === 0 ? (
           <div className="text-center py-12 sm:py-20">
-            <p style={{ color: '#EEF4ED', opacity: 0.7 }}>No blog posts found.</p>
+            <p style={{ color: '#EEF4ED', opacity: 0.7 }}>No blog posts found 📝.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

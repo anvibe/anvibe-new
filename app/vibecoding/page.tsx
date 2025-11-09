@@ -101,12 +101,12 @@ export default function VibecodingPage() {
                     <div className="px-4 sm:px-6 py-6 sm:py-8">
                       <div className="flex flex-col gap-4 sm:gap-6">
                         {[
-                          { href: '/', label: 'Home' },
-                          { href: '/#projects', label: 'Works (8)' },
-                          { href: '/about', label: 'About' },
-                          { href: '/vibecoding', label: 'Vibecoding' },
-                          { href: '/blog', label: 'Blog' },
-                          { href: '#contact', label: 'Contact' },
+                          { href: '/', label: 'Home 🏠' },
+                          { href: '/#projects', label: 'Works (8) 💼' },
+                          { href: '/about', label: 'About 👥' },
+                          { href: '/vibecoding', label: 'Vibecoding 🚀' },
+                          { href: '/blog', label: 'Blog 📝' },
+                          { href: '#contact', label: 'Contact 💬' },
                         ].map((item, index) => {
                           const isActive = item.href === '/' 
                             ? pathname === '/' 
@@ -184,10 +184,10 @@ export default function VibecodingPage() {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}>
-                  What is Vibecoding?
+                  What is Vibecoding? 🚀
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl max-w-3xl" style={{ color: '#EEF4ED', opacity: 0.9 }}>
-                  Vibecoding is the revolutionary approach to software development that combines human creativity with AI-powered code editors to create extraordinary digital experiences faster than ever before.
+                  Vibecoding is the revolutionary approach to software development 💻 that combines human creativity 🎨 with AI-powered code editors 🤖 to create extraordinary digital experiences ✨ faster than ever before.
                 </p>
               </div>
             </motion.div>
@@ -204,7 +204,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base font-bold">Core Principles</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Core Principles of Vibecoding
+                  Core Principles of Vibecoding 💡
                 </h2>
               </div>
             </ScrollAnimation>
@@ -213,15 +213,15 @@ export default function VibecodingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {[
                 { 
-                  title: 'Speed & Flow', 
+                  title: 'Speed & Flow ⚡', 
                   description: 'Vibecoding prioritizes maintaining creative flow and rapid iteration over perfect syntax' 
                 },
                 { 
-                  title: 'AI Collaboration', 
+                  title: 'AI Collaboration 🤝', 
                   description: 'Working symbiotically with AI tools as creative partners, not just code generators' 
                 },
                 { 
-                  title: 'Creative Expression', 
+                  title: 'Creative Expression 🎨', 
                   description: 'Focusing on the \'what\' and \'why\' while AI handles the \'how\' of implementation' 
                 }
               ].map((principle, index) => {
@@ -264,7 +264,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base text-center font-bold">Comparison</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Vibecoding vs Traditional Coding
+                  Vibecoding vs Traditional Coding ⚔️
                 </h2>
               </div>
             </ScrollAnimation>
@@ -284,15 +284,15 @@ export default function VibecodingPage() {
                     backgroundClip: 'text',
                     fontFamily: 'Inter, sans-serif' 
                   }}>
-                    Vibecoding Approach
+                    Vibecoding Approach 🚀
                   </h3>
                   <ul className="space-y-4 sm:space-y-5">
                     {[
-                      'Natural language prompts to generate code',
-                      'AI-assisted debugging and optimization',
-                      'Rapid prototyping and iteration',
-                      'Focus on creative problem-solving',
-                      'Collaborative AI partnership'
+                      'Natural language prompts to generate code 💬',
+                      'AI-assisted debugging and optimization 🔧',
+                      'Rapid prototyping and iteration ⚡',
+                      'Focus on creative problem-solving 💡',
+                      'Collaborative AI partnership 🤝'
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <span className="mt-1 text-xl" style={{ color: '#4BD760' }}>✓</span>
@@ -309,15 +309,15 @@ export default function VibecodingPage() {
                   backdropFilter: 'blur(10px)'
                 }}>
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 sm:mb-8 md:mb-10 leading-relaxed sm:leading-[1.4]" style={{ color: '#FD5C5C', fontFamily: 'Inter, sans-serif' }}>
-                    Traditional Coding
+                    Traditional Coding 📝
                   </h3>
                   <ul className="space-y-4 sm:space-y-5">
                     {[
-                      'Manual syntax writing and debugging',
-                      'Extensive documentation research',
-                      'Time-intensive development cycles',
-                      'Focus on technical implementation',
-                      'Individual problem-solving'
+                      'Manual syntax writing and debugging ⌨️',
+                      'Extensive documentation research 📚',
+                      'Time-intensive development cycles ⏱️',
+                      'Focus on technical implementation 🔨',
+                      'Individual problem-solving 👤'
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <span className="mt-1 text-xl" style={{ color: '#FD5C5C' }}>•</span>
@@ -341,7 +341,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base font-bold">Tools</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Popular Vibecoding Tools
+                  Popular Vibecoding Tools 🛠️
                 </h2>
               </div>
             </ScrollAnimation>
@@ -394,7 +394,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base font-bold">Benefits</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Why Choose Vibecoding?
+                  Why Choose Vibecoding? ✨
                 </h2>
               </div>
             </ScrollAnimation>
@@ -402,25 +402,25 @@ export default function VibecodingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               {[
                 {
-                  title: '10x Faster Development',
+                  title: '10x Faster Development ⚡',
                   description: 'Build full-stack applications in hours instead of weeks. Prototype ideas and validate concepts at unprecedented speed.',
                   stat: '10x',
                   color: '#3060eb'
                 },
                 {
-                  title: 'Lower Barrier to Entry',
+                  title: 'Lower Barrier to Entry 🚪',
                   description: 'You don\'t need to memorize syntax or spend years learning frameworks. Focus on solving problems, not syntax errors.',
                   stat: '80%',
                   color: '#8f35ea'
                 },
                 {
-                  title: 'Enhanced Creativity',
+                  title: 'Enhanced Creativity 🎨',
                   description: 'Free your mind from technical constraints. Let AI handle implementation while you focus on innovation and design.',
                   stat: '∞',
                   color: '#E1A0FF'
                 },
                 {
-                  title: 'Better Code Quality',
+                  title: 'Better Code Quality 💎',
                   description: 'AI assistants catch bugs, suggest optimizations, and follow best practices automatically, resulting in cleaner code.',
                   stat: '95%',
                   color: '#4BD760'
@@ -465,7 +465,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base font-bold">Use Cases</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Real-World Applications
+                  Real-World Applications 🌍
                 </h2>
               </div>
             </ScrollAnimation>
@@ -473,23 +473,23 @@ export default function VibecodingPage() {
             <div className="space-y-4 sm:space-y-6 md:space-y-8">
               {[
                 {
-                  title: 'Rapid MVP Development',
+                  title: 'Rapid MVP Development 🚀',
                   description: 'Founders and entrepreneurs use vibecoding to build and launch MVPs in days, not months. Test ideas quickly and iterate based on real user feedback.'
                 },
                 {
-                  title: 'Design-to-Code Translation',
+                  title: 'Design-to-Code Translation 🎨',
                   description: 'Designers can describe their vision in natural language and watch AI transform Figma designs into working prototypes instantly.'
                 },
                 {
-                  title: 'Legacy Code Modernization',
+                  title: 'Legacy Code Modernization 🔄',
                   description: 'Refactor and modernize old codebases faster with AI assistance. Understand complex systems and migrate to modern frameworks efficiently.'
                 },
                 {
-                  title: 'Educational Projects',
+                  title: 'Educational Projects 📚',
                   description: 'Students and educators leverage vibecoding to focus on learning concepts rather than getting stuck on syntax. Build projects that demonstrate understanding.'
                 },
                 {
-                  title: 'Startup Prototyping',
+                  title: 'Startup Prototyping 💼',
                   description: 'Indie hackers and startup teams ship products faster than ever. From idea to deployed application in record time, enabling rapid market validation.'
                 }
               ].map((useCase, index) => {
@@ -552,7 +552,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base font-bold">Getting Started</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold text-center leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Start Your Vibecoding Journey
+                  Start Your Vibecoding Journey 🎯
                 </h2>
               </div>
             </ScrollAnimation>
@@ -561,17 +561,17 @@ export default function VibecodingPage() {
               {[
                 {
                   step: '01',
-                  title: 'Choose Your AI Editor',
+                  title: 'Choose Your AI Editor 💻',
                   description: 'Start with Cursor, GitHub Copilot, or any AI-powered code editor. Most offer free trials to get you started.'
                 },
                 {
                   step: '02',
-                  title: 'Learn the Basics',
+                  title: 'Learn the Basics 📖',
                   description: 'Familiarize yourself with natural language prompting. Describe what you want to build, not how to code it.'
                 },
                 {
                   step: '03',
-                  title: 'Build Your First Project',
+                  title: 'Build Your First Project 🏗️',
                   description: 'Start small with a simple project. Let AI handle the boilerplate while you focus on the creative vision.'
                 }
               ].map((item, index) => {
@@ -616,7 +616,7 @@ export default function VibecodingPage() {
                   <span className="text-sm sm:text-base font-bold">Resources</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[57px] font-bold leading-relaxed sm:!leading-[1.3] md:!leading-[1.4] tracking-[-0.5px] sm:tracking-[-1.8px]" style={{ color: '#EEF4ED' }}>
-                  Learn & Connect
+                  Learn & Connect 🌐
                 </h2>
               </div>
             </ScrollAnimation>
@@ -624,13 +624,13 @@ export default function VibecodingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               {[
                 {
-                  title: 'Read Our Blog',
+                  title: 'Read Our Blog 📝',
                   description: 'Explore articles about vibecoding, AI tools, and modern development practices. Learn from real experiences and case studies.',
                   link: '/blog',
                   linkText: 'Visit Blog'
                 },
                 {
-                  title: 'Start Your Project',
+                  title: 'Start Your Project 🚀',
                   description: 'Ready to bring your ideas to life? Let\'s collaborate and create something extraordinary together. Transform your vision into reality with vibecoding.',
                   link: '#contact',
                   linkText: 'Start Now'
@@ -683,10 +683,10 @@ export default function VibecodingPage() {
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="rounded-lg sm:rounded-xl p-8 sm:p-12 md:p-16 text-center border-2 hero-gradient" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold mb-4 sm:mb-6 leading-relaxed sm:!leading-[1.3] md:!leading-[1.4]" style={{ color: '#FFFFFF' }}>
-                  Ready to Start Vibecoding?
+                  Ready to Start Vibecoding? 🚀
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto" style={{ color: '#FFFFFF', opacity: 0.9 }}>
-                  Join thousands of developers who are already building faster, smarter, and more creatively with AI-powered development tools.
+                  Join thousands of developers 👥 who are already building faster ⚡, smarter 🧠, and more creatively 🎨 with AI-powered development tools 🤖.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link

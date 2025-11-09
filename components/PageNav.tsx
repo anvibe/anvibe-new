@@ -91,12 +91,12 @@ export default function PageNav() {
                   <div className="px-6 py-8">
                     <div className="flex flex-col gap-6">
                       {[
-                        { href: '/', label: 'Home' },
-                        { href: '/#projects', label: 'Works (8)' },
-                        { href: '/about', label: 'About' },
-                        { href: '/vibecoding', label: 'Vibecoding' },
-                        { href: '/blog', label: 'Blog' },
-                        { href: '#contact', label: 'Contact' },
+                        { href: '/', label: 'Home 🏠' },
+                        { href: '/#projects', label: 'Works (8) 💼' },
+                        { href: '/about', label: 'About 👥' },
+                        { href: '/vibecoding', label: 'Vibecoding 🚀' },
+                        { href: '/blog', label: 'Blog 📝' },
+                        { href: '#contact', label: 'Contact 💬' },
                       ].map((item, index) => {
                         const isActive = item.href === '/' 
                           ? pathname === '/' 

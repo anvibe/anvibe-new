@@ -91,12 +91,12 @@ export default function ProjectHeader() {
                   <div className="px-4 sm:px-6 py-6 sm:py-8">
                     <div className="flex flex-col gap-4 sm:gap-6">
                       {[
-                        { href: '/', label: 'Home' },
-                        { href: '/#we-design', label: 'Projects' },
-                        { href: '/about', label: 'About' },
-                        { href: '/vibecoding', label: 'Vibecoding' },
-                        { href: '/blog', label: 'Blog' },
-                        { href: '#contact', label: 'Contact' },
+                        { href: '/', label: 'Home 🏠' },
+                        { href: '/#we-design', label: 'Projects 💼' },
+                        { href: '/about', label: 'About 👥' },
+                        { href: '/vibecoding', label: 'Vibecoding 🚀' },
+                        { href: '/blog', label: 'Blog 📝' },
+                        { href: '#contact', label: 'Contact 💬' },
                       ].map((item, index) => {
                         const isActive = item.href === '/' 
                           ? pathname === '/' 

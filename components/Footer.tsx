@@ -60,12 +60,12 @@ export default function Footer() {
             {/* Navigation Links - Horizontal on mobile */}
             <div className="flex flex-row sm:flex-col gap-2 sm:gap-1 flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-x-visible">
               <a href="#projects" className="flex items-center gap-1 text-white hover:text-white/80 transition-colors text-sm sm:text-base whitespace-nowrap shrink-0">
-                <span>Works</span>
+                <span>Projects 💼</span>
                 <span className="text-xs">(8)</span>
               </a>
-              <a href="/about" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">About</a>
-              <a href="#blog" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">Blog</a>
-              <a href="#contact" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">Contact</a>
+              <a href="/about" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">About 👥</a>
+              <a href="#blog" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">Blog 📝</a>
+              <a href="#contact" className="text-sm sm:text-base text-white hover:text-white/80 transition-colors whitespace-nowrap shrink-0">Contact 💬</a>
             </div>
 
             {/* Social Links - Horizontal */}

@@ -29,10 +29,10 @@ export default async function BlogPage() {
                   </div>
                 </div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-8" style={{ color: '#EEF4ED' }}>
-                  Latest Insights & Updates
+                  Latest Insights & Updates 📚
                 </h1>
                 <p className="text-xl max-w-md" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-                  Stay updated with the latest insights about AI-powered development
+                  Stay updated with the latest insights 💡 about AI-powered development 🤖
                 </p>
               </div>
             </ScrollAnimation>
@@ -40,7 +40,7 @@ export default async function BlogPage() {
             {/* Blog Posts Grid */}
             {posts.length === 0 ? (
               <div className="text-center py-20">
-                <p style={{ color: '#EEF4ED', opacity: 0.7 }}>No blog posts found.</p>
+                <p style={{ color: '#EEF4ED', opacity: 0.7 }}>No blog posts found 📝.</p>
               </div>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

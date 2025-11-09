@@ -12,7 +12,7 @@ export default function WeDesignSection() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
               style={{ color: '#EEF4ED' }}
             >
-              We design unique
+              We design unique ✨
             </h2>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.2}>
@@ -20,13 +20,13 @@ export default function WeDesignSection() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
               style={{ color: '#EEF4ED' }}
             >
-              AI experiences
+              AI experiences 🤖
             </h2>
           </ScrollAnimation>
         </div>
         <ScrollAnimation direction="up" delay={0.3}>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal leading-relaxed max-w-4xl" style={{ color: '#EEF4ED', opacity: 0.8 }}>
-            We craft intelligent digital solutions that blend cutting-edge AI technology with human-centered design, creating experiences that are both powerful and intuitive.
+            We craft intelligent digital solutions 💡 that blend cutting-edge AI technology 🤖 with human-centered design 🎨, creating experiences that are both powerful and intuitive ✨.
           </p>
         </ScrollAnimation>
       </div>
