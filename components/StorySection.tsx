@@ -37,7 +37,7 @@ export default function StorySection() {
                 {/* Background Image */}
                 <div className="absolute inset-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop"
+                    src="/images/projects/akanano/hero.webp"
                     alt="Story section background"
                     fill
                     className="object-cover"
